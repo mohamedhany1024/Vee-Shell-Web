@@ -1,0 +1,21 @@
+* {
+    background-color: black;
+    font-family: sans-serif;
+}
+
+
+
+#logo {
+    text-align: center;
+
+}
+
+#text {
+    text-align: center;
+    color: white;
+}
+
+
+#load {
+    text-align: center;
+}

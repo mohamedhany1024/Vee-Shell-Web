@@ -1,0 +1,218 @@
+   <!--__________________________________vBoard Goes Here_______________________________________-->
+    <!--This HTML Code is Self Independent. It means That You can Copy This Code To the End of Your Web app
+    and Have The default Zee-Shell keyboard and Nav-bar With no Problems-->
+    <div class="board-warp">
+        <div id="vBoard">
+
+                <div class="numbers">
+                    <input type="button" value="0" onclick='v("0")' id="key">
+                    <input type="button" value="1" onclick='v("1")' id="key">
+                    <input type="button" value="2" onclick='v("2")' id="key">
+                    <input type="button" value="3" onclick='v("3")' id="key">
+                    <input type="button" value="4" onclick='v("4")' id="key">
+                    <input type="button" value="5" onclick='v("5")' id="key">
+                    <input type="button" value="6" onclick='v("6")' id="key">
+                    <input type="button" value="7" onclick='v("7")' id="key">
+                    <input type="button" value="8" onclick='v("8")' id="key">
+                    <input type="button" value="9" onclick='v("9")' id="key">
+                </div>
+
+                <div class="row1">
+                        <input type="button" value="q" onclick='v("q")' id="key">
+                        <input type="button" value="w" onclick='v("w")' id="key">
+                        <input type="button" value="e" onclick='v("e")' id="key">
+                        <input type="button" value="r" onclick='v("r")' id="key">
+                        <input type="button" value="t" onclick='v("t")' id="key">
+                        <input type="button" value="y" onclick='v("y")' id="key">
+                        <input type="button" value="u" onclick='v("u")' id="key">
+                        <input type="button" value="i" onclick='v("i")' id="key">
+                        <input type="button" value="o" onclick='v("o")' id="key">
+                        <input type="button" value="p" onclick='v("p")' id="key">
+                        <input type="button" value="{" onclick='v("{")' id="key">
+                        <input type="button" value="del" onclick="del()" id="key">
+                    </div>
+                <div class="row2">
+                        <input type="button" value="a" onclick='v("a")' id="key">
+                        <input type="button" value="s" onclick='v("s")' id="key">
+                        <input type="button" value="d" onclick='v("d")' id="key">
+                        <input type="button" value="f" onclick='v("f")' id="key">
+                        <input type="button" value="g" onclick='v("g")' id="key">
+                        <input type="button" value="h" onclick='v("h")' id="key">
+                        <input type="button" value="j" onclick='v("j")' id="key">
+                        <input type="button" value="k" onclick='v("k")' id="key">
+                        <input type="button" value="l" onclick='v("l")' id="key">
+                        <input type="button" value=";" onclick='v(";")' id="key">
+
+                </div>
+            
+                <div class="row3">
+                    <input type="button" value="Sh" onclick='v("")' id="key">
+                    <input type="button" value="z" onclick='v("z")' id="key">
+                    <input type="button" value="x" onclick='v("x")' id="key">
+                    <input type="button" value="c" onclick='v("c")' id="key">
+                    <input type="button" value="v" onclick='v("v")' id="key">
+                    <input type="button" value="b" onclick='v("b")' id="key">
+                    <input type="button" value="n" onclick='v("n")' id="key">
+                    <input type="button" value="m" onclick='v("m")' id="key">
+                    <input type="button" value="," onclick='v(",")' id="key">
+                    <input type="button" value="." onclick='v(".")' id="key">
+                    
+                    
+                </div>
+        
+                <div class="spacebar">
+                    <input type="button" value="Space" onclick='v(" ")' id="key">
+                </div>
+            </div> 
+            
+            <style>
+                .board-warp {
+                    position: fixed;
+                    width: 100%;
+                    left: 0;
+                    bottom: 0;
+                    padding: 3% 0;
+                    user-select: none;
+                    transition: bottom 0.4s;
+                }
+                
+                #vBoard {
+                    text-align: center; 
+                    background-color: #252525;
+                    
+                }
+            
+                #key {
+                    font-size: 210%;
+                    background-color: #505050;
+                    color: #ffffff;
+                    border-radius: 20%;
+                    border: none;
+                    margin: 0.5%;
+                    outline: none;
+                    cursor: pointer;
+                }
+        
+                #key:hover {
+                    background-color: cornflowerblue;<h5>Top Sites</h5>
+                }
+                
+                .numbers {
+                    background-color: #161616;
+                }
+
+                .row2 {
+                    padding-right: 7%;
+                }   
+        
+                .row3 {
+                    padding-right: 5%;
+                }
+
+                #searchBtn {
+                    background-color: #00f829;
+                    border-style: none;
+                    color: white;
+                    border-top-right-radius: 7px;
+                    border-bottom-right-radius: 7px;
+                    font-size: 100%;
+                }
+            </style>
+            
+            <script>
+                 /*when Any Of the buttons is Pressed any input Field that has an id of editText.
+                will Recieve the value of the button Which the user Pressed*/
+                function v(val) {
+                    document.getElementById("editText").value+=val;
+                    var audio = new Audio('sounds/key_press.wav');
+                    audio.play();
+                }
+        
+                function del() {
+                    let tArea = document.getElementById("editText")
+                    tArea.value = tArea.value.substring(0, tArea.value.length - 1);
+                    var audio = new Audio('sounds/key_press.wav');
+                    audio.play();
+                }
+
+              
+            </script>
+            <div class="navBar">
+                    <ul>
+                            <li id="home">
+                                    <a href="home.html" id="home_link">
+                                        H
+                                    </a>
+                                </li>
+                        
+                                <li id="showVBoard-li">
+                                    <button onclick="showBoard()" id="toggleVBoard">/\</button>
+                                </li>
+                    </ul>
+                    
+                </div>
+                
+                <style>
+                   
+                
+                    #home {
+                        text-align: center;
+                    }
+                
+                    #home_link {
+                        font-family: sans-serif;
+                        color: white;
+                        font-size: 190%;
+                    }
+                
+                    .navBar {
+                        background-color: #646464;
+ 
+                        
+                    }
+                
+                    #showVBoard-li {
+                        float: left;
+                        
+                    }
+                
+                    #showVBoard {
+                        background-color: #646464;
+                        color: white;
+                        font-size: 190%;
+                    }
+                
+                    .navBar ul {
+                        overflow: hidden;
+                        list-style-type: none;
+                    }
+                
+                    .navBar li {
+                        float: right;
+                        width: 20%;
+                    }
+
+                    #toggleVBoard {
+                        background-color: #646464;
+                        color: white;
+                        font-size: 190%;
+                        border-style: none;
+                    }
+                </style>
+                
+                <script>
+                    function showBoard() {
+                        var kb = document.getElementById("vBoard");
+                        
+                        if (kb.style.display==="none") {
+                            kb.style.display="block";
+                        } else {
+                            kb.style.display="none";
+                        }
+                
+                    }
+                
+                    
+                </script>
+        
+</div>
