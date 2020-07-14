@@ -1,3 +1,3 @@
 # Zee-Shell-Web
 Official Source Code For Zee Shell
-An Attempt To Try and Make a Mobile Friendly OS In The Web>
+A Touch-Friendy Shell That Runs On Top of A Linux Environement
