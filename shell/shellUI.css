@@ -1,0 +1,90 @@
+.titleBar {
+	background-color: #0096ff;
+	font-family: sans-serif;
+	font-size: 180%;
+	text-align: center;
+	box-shadow: 0 10px 15px #aaaaaa;
+}
+
+.btn {
+	background-color: #ffffff8a;
+	border: none;
+	font-size: 150%;
+	border-radius: 10px;
+	transition: background-color 0.3s ease-in-out;
+}
+
+.btn:hover {
+	background-color: rgba(255, 255, 255, 0.411);
+}
+
+.btn:active {
+	background-color: rgba(255, 255, 255, 0.781)
+}
+
+.editText {
+	background-color: white;
+	border: none;
+	border-radius: 10px;
+	color: black;
+	transition: all 0.3s ease-im-out;
+}
+
+.editText:hover {
+	box-shadow: 0 0 15px #aaaaaa;
+}
+
+.textBlock {
+	background-color: #ffffff8a;
+	border-radius: 10px;
+}
+
+.menuOption {
+	background-color: #ffffff8a;
+	border-radius: 10px;
+	justify-content: center;
+	align-items: center;
+	transition: background-color 0.3s ease-in-out;
+}
+
+.menuOption:hover {
+	background-color: rgba(255, 255, 255, 0.411);
+}
+
+.menuImage {
+	padding-left: 10px;
+}
+
+.imageBtn {
+	background-color: #ffffff8a;
+	border-radius: 10px;
+	border: none;
+	width: 120px;
+	transition: background-color 0.3s ease-in-out;
+}
+
+.imageBtn:hover {
+	background-color: rgba(255, 255, 255, 0.411);
+}
+
+.grid2 {
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-gap: 10px;
+}
+
+.grid3 {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	grid-gap: 10px;
+}
+
+.grid5 {
+	display: grid;
+	grid-template-columns: auto auto auto auto auto;
+	grid-gap: 10px;
+}
+
+p {
+	padding: 10px;
+}
