@@ -64,6 +64,7 @@
 	justify-content: center;
 	align-items: center;
 	transition: background-color 0.3s ease-in-out;
+	padding-bottom: 5px;
 }
 
 .menuOption:hover {
@@ -72,6 +73,10 @@
 
 .menuImage {
 	padding-left: 10px;
+}
+
+.menuLabel {
+	display: inline-flex;
 }
 
 .imageBtn {
@@ -105,7 +110,7 @@
 }
 
 p {
-	padding: 10px;
+	//padding: 10px;
 }
 
 .dialogueBox {
