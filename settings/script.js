@@ -16,7 +16,9 @@ function retriveWallpaper() {
         console.log("bg2 set");
     }
 
-    if (retrivedData == "wall4") {
+    if (retrivedData == "wall3") {
+        let bastard = document.getElementById("bag");
+        bastard.style.backgroundImage = ("url('../shell/wallpapers/wall3.jpg')")
         console.log("bg4 set");
     }
 }
