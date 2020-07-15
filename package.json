@@ -1,0 +1,19 @@
+{
+  "name": "zee-shell",
+  "version": "1.0.0",
+  "description": "A Touch Friendly Shell That Runs On Top Of a Linux Environement",
+  "main": "nodeBackend.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohamedhany1024/Zee-Shell-Web.git"
+  },
+  "author": "mohamedhany",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mohamedhany1024/Zee-Shell-Web/issues"
+  },
+  "homepage": "https://github.com/mohamedhany1024/Zee-Shell-Web#readme"
+}

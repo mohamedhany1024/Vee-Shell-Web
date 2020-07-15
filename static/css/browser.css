@@ -1,0 +1,113 @@
+/*body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  margin: auto;
+  max-width: 38rem;
+  padding: 2rem;
+}*/
+
+#btn {
+  background-color: #006eff;
+  color: white;
+  font-size: 150%;
+  border: none;
+}
+
+.header {
+  background-color: cornflowerblue;
+  /*position: fixed;
+  width: 100%;
+  height 6%;*/
+  width: 100%;
+}
+
+.btnBack {
+  float: left;
+  background-color: #ffffff8a;
+  border-radius: 10px;
+}
+
+#btnHelp {
+  float: left;
+  background-color: #ffffff8a;
+  border-radius: 10px;
+  border: none;
+  font-size: 150%;
+}
+
+.btnBack:hover {
+  background-color: #ffffff5b;
+}
+
+.btnForward {
+  display: inline-block;
+  float: right;
+  background-color: #ffffff8a;
+  border-radius: 10px;
+}
+
+.btnForward:hover {
+  background-color: #ffffff5b;
+}
+
+#btnHome {
+  background-color: #ffffff8a;
+  border-radius: 10px;
+}
+
+#btnHome:hover {
+  background-color: #ffffff5b;
+}
+
+.addressBar {
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: 60px;
+}
+
+#editText {
+  background-color: white;
+  border-radius: 10px;
+  color: black;
+  border: none;
+  font-size: 5vh;
+}
+
+/*#view {
+  width: 100%;
+  height: 100%;
+}*/
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+webview {
+  /*padding-top: 13%;*/
+  display: block;   /* iframes are inline by default */
+  border: none;     /* Reset default border */
+  height: 80vh;     /* Viewport-relative units */
+  width: 95vw;
+}
+
+#goBtn {
+  border-radius: 15px;
+  background-color: #00ff0d;
+  color: black;
+  border: none;
+  font-size: 5vh;
+}
+
+.help {
+  display: none;
+  position: fixed;
+  background-color: white;
+  box-shadow: #aaaaaa 0 0 10px;
+  width: 100%;
+}
+
+h5 {
+  font-family: sans-serif;
+}
