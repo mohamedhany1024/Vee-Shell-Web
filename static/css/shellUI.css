@@ -32,7 +32,7 @@
 .btn {
 	background-color: #ffffff8a;
 	border: none;
-	font-size: 7vw;
+	font-size: 150%;
 	border-radius: 10px;
 	transition: background-color 0.3s ease-in-out;
 }
