@@ -1,5 +1,6 @@
 let promptSound = new Audio('sounds/prompt_generic.mp3');
 
+
 function retriveWallpaper() {
     retrivedData = JSON.parse(localStorage.getItem("selectedWallpaper"));
     
@@ -19,6 +20,26 @@ function retriveWallpaper() {
     if (retrivedData == "wall4") {
         console.log("bg4 set");
     }
+    
+    if (retrivedData == "outOfFocus") {
+		let bastard = document.getElementById("bag");
+		bastard.style.backgroundImage = ("url('wallpapers/outOfFocus.jpg')");
+	}
+	
+	 if (retrivedData == "droplet") {
+		let bastard = document.getElementById("bag");
+		bastard.style.backgroundImage = ("url('wallpapers/droplet.jpg')");
+	}
+	
+	 if (retrivedData == "pinkFlower") {
+		let bastard = document.getElementById("bag");
+		bastard.style.backgroundImage = ("url('wallpapers/pinkFlower.jpg')");
+	}
+	
+	 if (retrivedData == "plantPot") {
+		let bastard = document.getElementById("bag");
+		bastard.style.backgroundImage = ("url('wallpapers/plantPot.jpg')");
+	}
 }
 
 function clearAll() {
