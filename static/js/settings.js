@@ -1,4 +1,4 @@
-let promptSound = new Audio('sounds/prompt_generic.mp3');
+let promptSound = new Audio("{{ url_for('static', filename='sounds/prompt_generic.mp3') }}");
 
 
 function retriveWallpaper() {
@@ -13,7 +13,7 @@ function retriveWallpaper() {
 
     if (retrivedData == "wall2") {
         let bastard = document.getElementById("bag");
-        bastard.style.backgroundImage = ("url('wallpapers/wall2.jpeg')")
+        bastard.style.backgroundImage = ("url('/static/wallpapers/wall2.jpeg')")
         console.log("bg2 set");
     }
 
@@ -23,22 +23,22 @@ function retriveWallpaper() {
     
     if (retrivedData == "outOfFocus") {
 		let bastard = document.getElementById("bag");
-		bastard.style.backgroundImage = ("url('wallpapers/outOfFocus.jpg')");
+		bastard.style.backgroundImage = ("url('/static/wallpapers/outOfFocus.jpg')");
 	}
 	
 	 if (retrivedData == "droplet") {
 		let bastard = document.getElementById("bag");
-		bastard.style.backgroundImage = ("url('wallpapers/droplet.jpg')");
+		bastard.style.backgroundImage = ("url('/static/wallpapers/droplet.jpg')");
 	}
 	
 	 if (retrivedData == "pinkFlower") {
 		let bastard = document.getElementById("bag");
-		bastard.style.backgroundImage = ("url('wallpapers/pinkFlower.jpg')");
+		bastard.style.backgroundImage = ("url('/static/wallpapers/pinkFlower.jpg')");
 	}
 	
 	 if (retrivedData == "plantPot") {
 		let bastard = document.getElementById("bag");
-		bastard.style.backgroundImage = ("url('wallpapers/plantPot.jpg')");
+		bastard.style.backgroundImage = ("url('/static/wallpapers/plantPot.jpg')");
 	}
 }
 
@@ -89,7 +89,7 @@ function back() {
     about.style.display = ("none");
     options.style.display = ("block");
     btn.style.display = ("none");*/
-    window.location.href = ("settings.html");
+    //window.location.href = "/templates/settings.html";
 }
 
 function wallpaper() {

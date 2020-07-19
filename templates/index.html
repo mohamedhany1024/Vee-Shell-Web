@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+        
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vee Shell</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+<body onload="redirect">
+    <p id="logo">
+        <img src="/static/images/logo.png" width="100">
+    </p> 
+    <p id="text">
+        Starting Vee Shell
+    </p>
+
+   <p id="load">
+        <img src="/static/images/load_ico.svg" width="60">
+   </p> 
+    
+</body>
+<script>
+	function redirect() {
+		setTimeout(function() {
+				window.location.href = "{{ url_for('home') }}";
+			}, 4000);
+	};
+	
+	redirect();
+</script>
+</html>
