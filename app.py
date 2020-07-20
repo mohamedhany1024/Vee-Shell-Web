@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+import platform
 
 app = Flask(__name__)
 
@@ -15,7 +16,8 @@ def home():
 @app.route('/settings')
 
 def settings():
-	return render_template("settings.html")
+	cpu = platform.processor()
+	return render_template("settings.html", cpu=cpu)
 	
 @app.route('/calc')
 def calc():
@@ -28,5 +30,5 @@ def dialler():
 	
 @app.route('/browser')
 
-def browser():
+def browser(wallpaper):
 	return render_template('browser.html')

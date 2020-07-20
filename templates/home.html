@@ -9,9 +9,9 @@
 </head>
 <body id="body" background="wallpapers/kde1.png">
     <div id="powerMenu" class="powerOptions" onclick="exitPower()">
-        <img id="powerOff" src="images/power.png" width="120" onclick="power()">
+        <img id="powerOff" src="{{ url_for('static', filename='images/power.png') }}" width="120" onclick="power()">
         <p>Power Off</p>
-        <img id="powerOff" src="images/restart.png" width="120" onclick="window.location.href='index.html'">
+        <img id="powerOff" src="{{ url_for('static', filename='images/restart.png') }}" width="120" onclick="window.location.href='index.html'">
         <p>Restart</p>
     </div>
     <script src="{{ url_for('static', filename='js/home.js') }}"></script>

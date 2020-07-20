@@ -1,5 +1,4 @@
-let promptSound = new Audio("{{ url_for('static', filename='sounds/prompt_generic.mp3') }}");
-
+let promptSound = new Audio("/static/sounds/prompt_generic.mp3");
 
 function retriveWallpaper() {
     retrivedData = JSON.parse(localStorage.getItem("selectedWallpaper"));
