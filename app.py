@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-import platform
+import platform, subprocess, re
 
 app = Flask(__name__)
 
@@ -16,7 +16,11 @@ def home():
 @app.route('/settings')
 
 def settings():
-	cpu = platform.processor()
+	command = "cat /proc/cpuinfo"
+	returnedValue = subprocess.check_output(command, shell=True).strip().decode()
+	for line in returnedValue.split("\n"):
+		if "model name" in line:
+			cpu = line
 	return render_template("settings.html", cpu=cpu)
 	
 @app.route('/calc')
@@ -30,5 +34,5 @@ def dialler():
 	
 @app.route('/browser')
 
-def browser(wallpaper):
+def browser():
 	return render_template('browser.html')
