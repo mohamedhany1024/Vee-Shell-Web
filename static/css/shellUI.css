@@ -141,3 +141,17 @@ p {
     z-index: -1;
     filter: blur(10px);
 }
+
+.screen {
+	display: none;
+	animation: 0.5s ease-out 0s 1 screenOpen;
+}
+
+.splashScreen {
+	background-color: #00c478;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	position: fixed;
+}
