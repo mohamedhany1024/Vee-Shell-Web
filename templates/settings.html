@@ -7,9 +7,9 @@
     <title>Settings</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/shellUI.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/settings.css') }}">
-    <script src="{{ url_for('static', filename='js/settings.js') }}"></script>
 </head>
 <body>
+	<div class="splashScreen" id="splashScreen"><p>Settings</p></div>
     <div class="background" id="bag"></div>
     <div class="settings">
         <div class="dialogueBox" id="prompt">
@@ -301,6 +301,7 @@
 </div>
 
 
-
+<script src="{{ url_for('static', filename='js/shellUtils.js') }}"></script>
+<script src="{{ url_for('static', filename='js/settings.js') }}"></script>
 </body>
 </html>
