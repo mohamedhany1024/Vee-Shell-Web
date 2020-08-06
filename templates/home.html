@@ -6,8 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Vee shell</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/shellUI.css') }}">
 </head>
-<body id="body" background="wallpapers/kde1.png">
+<body id="body">
+	<div class="backgroundHome" id="backgroundHome"></div>
     <div id="powerMenu" class="powerOptions" onclick="exitPower()">
         <img id="powerOff" src="{{ url_for('static', filename='images/power.png') }}" width="120" onclick="power()">
         <p>Power Off</p>
