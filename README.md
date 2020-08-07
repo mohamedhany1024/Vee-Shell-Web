@@ -6,7 +6,9 @@ In Order To Run Vee Shell. First You'll Need To install Some Dependencies That V
 <h1>Installing Dependencies</h1>
 First You'll Need Python 3. You Can Install it on Debian/Ubuntu Based Systems By Running The Following Command In A Terminal Window.
 
-```sudo apt-get install python3```
+```
+sudo apt-get install python3
+```
 
 Second Thing You'll Need To Install is pip. You can Install It on Debian/Ubuntu Based Systems By Executing The Following Command In a Terminal window
 ```
