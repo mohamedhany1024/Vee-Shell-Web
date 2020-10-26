@@ -13,33 +13,38 @@
     <div id="powerMenu" class="powerOptions" onclick="exitPower()">
         <img id="powerOff" src="{{ url_for('static', filename='images/power.png') }}" width="120" onclick="power()">
         <p>Power Off</p>
-        <img id="powerOff" src="{{ url_for('static', filename='images/restart.png') }}" width="120" onclick="window.location.href='index.html'">
+        <a href="{{ url_for('restart') }}"><img id="powerOff" src="{{ url_for('static', filename='images/restart.png') }}" width="120"></a>
         <p>Restart</p>
     </div>
     <script src="{{ url_for('static', filename='js/home.js') }}"></script>
     <div class="menu" id="menu">
-        <h1>Apps</h1>
+        <h1 class="textBlock">Apps</h1>
         <ul>
             <a href ="{{ url_for('dialler') }}">
 				<img class="icon" src="{{ url_for('static', filename='images/dialler.png') }}" id="dialler" width="80">
-				<p>Dialler</p> 
+				<p class="label">Dialler</p> 
             </a>
             <a href="{{ url_for('browser') }}">
                 <img class="icon" src="{{ url_for('static', filename='images/browser.png') }}" id="browser" width="80">
-                <p>Web Browser</p>
+                <p class="label">Web Browser</p>
             </a>
             <a href="{{ url_for('settings') }}">
                 <img class="icon" src="{{ url_for('static', filename='images/settings.png') }}" width="80">
-                <p>Settings</p>
+                <p class="label">Settings</p>
             </a>
             <a href="{{ url_for('calc') }}">
                 <img class="icon" src="{{ url_for('static', filename='images/calculator.png') }}" id="calc" width="80">
-                <p>Calculator</p>
+                <p class="label">Calculator</p>
             </a> 
             <img src="{{ url_for('static', filename='images/power.png') }}" width="80" onclick="power()" id="powerBtn">
         </ul>
         <ul id="row2">   
         </ul>
     </div> 
+    <style>
+        .backgroundHome {
+            background-image: url('../static/wallpapers/{{ wallpaper }}');
+        }
+    </style>
 </body>
 </html>

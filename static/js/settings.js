@@ -59,14 +59,12 @@ function cancel() {
 }
 
 function about() {
-    let ram = navigator.deviceMemory;
     let options = document.getElementById("options");
     let about = document.getElementById("about");
     let btn = document.getElementById("btn");
     options.style.display = ("none");
     about.style.display = ("block");
     btn.style.display = ("inline");
-    document.getElementById("ram").innerHTML = ("RAM: " + ram + "GB"); 
     document.getElementById("screenRes").innerHTML = ("Screen Resolution: " + screen.width + "X" + screen.height);
 }
 

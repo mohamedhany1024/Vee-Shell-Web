@@ -23,17 +23,24 @@
     filter: blur(10px);
 }
 
-h4 {
+/*h4 {
     color: white;
     font-size: 150%;
     font-family: sans-serif;
     text-align: center;
     display: inline;
     padding-left: 2vh;
+}*/
+
+.titleBar p {
+    color: black;
+    display: inline;
+    padding-left: 2vh;
+    font-family: sans-serif;
 }
 
-p {
-    font-family: sans-serif;
+.titleBar {
+    margin-bottom: 30px;
 }
 
 .settings {

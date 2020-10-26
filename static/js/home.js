@@ -3,8 +3,8 @@ function power() {
     let power = document.getElementById("powerMenu");
     let body = document.getElementById("body");
     let background = document.getElementById('backgroundHome');
-    bg.style.filter = ("blur(7px)");
-    background.style.filter = ("blur(7px)");
+    bg.style.filter = ("blur(13px)");
+    background.style.filter = ("blur(13px)");
     power.style.display = ("block");
     power.style.zIndex = ("10");
 }
