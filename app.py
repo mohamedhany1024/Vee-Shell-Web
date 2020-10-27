@@ -72,6 +72,11 @@ def wall(wall):
 		f.write("droplet.jpg")
 		f.close()
 		restartBackend()
+	
+	elif wall == "wall2":
+		f.write("wall2.jpeg")
+		f.close()
+		restartBackend()
 
 	elif wall == "pinkFlower":
 		f.write("pinkFlower.jpg")
@@ -83,11 +88,11 @@ def wall(wall):
 		f.close()
 		restartBackend()
 	
-	else:
-		f.write("wall2.jpeg")
+	elif wall == "risingSun":
+		f.write("risingSun.jpg")
 		f.close()
 		restartBackend()
-	return render_template('settings.html')
+	return render_template("settings.html")
 
 @app.route('/restart')
 

@@ -5,14 +5,14 @@ function retriveWallpaper() {
     
     
     if (retrivedData == "wall1") {
-        let bastard = document.getElementById("bag");
-        bastard.style.backgroundImage = ("url('wallpapers/kde1.png')")
+        let wall = document.getElementById("bag");
+        wall.style.backgroundImage = ("url('wallpapers/kde1.png')")
         console.log("bg set");
     }
 
     if (retrivedData == "wall2") {
-        let bastard = document.getElementById("bag");
-        bastard.style.backgroundImage = ("url('/static/wallpapers/wall2.jpeg')")
+        let wall = document.getElementById("bag");
+        wall.style.backgroundImage = ("url('/static/wallpapers/wall2.jpeg')")
         console.log("bg2 set");
     }
 
@@ -21,23 +21,28 @@ function retriveWallpaper() {
     }
     
     if (retrivedData == "outOfFocus") {
-		let bastard = document.getElementById("bag");
-		bastard.style.backgroundImage = ("url('/static/wallpapers/outOfFocus.jpg')");
+		let wall = document.getElementById("bag");
+		wall.style.backgroundImage = ("url('/static/wallpapers/outOfFocus.jpg')");
 	}
 	
 	 if (retrivedData == "droplet") {
-		let bastard = document.getElementById("bag");
-		bastard.style.backgroundImage = ("url('/static/wallpapers/droplet.jpg')");
+		let wall = document.getElementById("bag");
+		wall.style.backgroundImage = ("url('/static/wallpapers/droplet.jpg')");
 	}
 	
 	 if (retrivedData == "pinkFlower") {
-		let bastard = document.getElementById("bag");
-		bastard.style.backgroundImage = ("url('/static/wallpapers/pinkFlower.jpg')");
+		let wall = document.getElementById("bag");
+		wall.style.backgroundImage = ("url('/static/wallpapers/pinkFlower.jpg')");
 	}
 	
 	 if (retrivedData == "plantPot") {
-		let bastard = document.getElementById("bag");
-		bastard.style.backgroundImage = ("url('/static/wallpapers/plantPot.jpg')");
+		let wall = document.getElementById("bag");
+		wall.style.backgroundImage = ("url('/static/wallpapers/plantPot.jpg')");
+    }
+    
+    if (retrivedData == "risingSun") {
+		let wall = document.getElementById("bag");
+		wall.style.backgroundImage = ("url('/static/wallpapers/risingSun.jpg')");
 	}
 }
 
