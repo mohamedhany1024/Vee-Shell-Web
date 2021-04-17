@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-import platform, subprocess, re, os
+import platform, subprocess, re, os, shutil
 
 app = Flask(__name__)
 
@@ -8,6 +8,18 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 f2 = open("currentWallpaper.txt", "r")
 wallpaper = f2.read()
 os.system("firefox 127.0.0.1:5000/")
+stat = shutil.disk_usage('/')
+stGig = stat[0]
+frGig = stat[2]
+for i in range(3):
+	stGig /=1024
+	frGig /=1024
+frGig = round(frGig, 1)
+stGig = round(stGig, 1)
+usGig = stGig - frGig
+
+
+
 def restartBackend():
 	os.system("gnome-terminal -e ./restart.sh")
 
@@ -41,7 +53,7 @@ def settings():
 	for line in returnedValue.split("\n"):
 		if "model name" in line:
 			cpu = line
-	return render_template("settings.html", cpu=cpu, memGig=memGig, wallpaper=wallpaper)
+	return render_template("settings.html", cpu=cpu, memGig=memGig, wallpaper=wallpaper, stGig=stGig, frGig=frGig, usGig=usGig)
 	
 @app.route('/calc')
 def calc():

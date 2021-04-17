@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/settings.css') }}">
 </head>
 <body>
-	<div class="splashScreen" id="splashScreen"><p>Settings</p></div>
+	<div class="splashScreen" id="splashScreen"><p id="splash">Settings</p></div>
     <div class="background" id="bag"></div>
     <div class="settings">
         <div class="dialogueBox" id="prompt">
@@ -23,6 +23,13 @@
             <p>Settings</p>
         </div>
         <div class="storage" id="storage">
+            <h3 class="textBlock">Storage Space</h3>
+            <div class="textBlock">
+                <h4>Information About Your Device's Storage Space.</h4>
+                <p>Total Storage Space: {{stGig}}GB</p>
+                <p>Free Storage Space: {{frGig}}GB</p>
+                <p>Used Storage Space: {{usGig}}GB</p>
+            </div>
             <div class="textBlock">
                 <h3>System Data</h3>
                 <p>System Data Contains All Your Prefrences. Like Your Wallpaper, Fonts, etc...</p>
@@ -46,6 +53,7 @@
                 <p id="screenRes">screen resolution</p>
                 <p id="ram">RAM: {{ memGig }}GB</p>
                 <p id="cpu">CPU {{ cpu }}</p>
+                <p>Total Storage Space: {{stGig}}GB</p>
             </div>
         </div>
         <div class="options" id="options">

@@ -160,7 +160,7 @@
 	background-image: url('../wallpapers/wall2.jpeg');
     position: fixed;
     background-repeat: no-repeat;
-    background-size: cover;
+	background-size: cover;
     width: 100%;
     height: 100%;
     z-index: -1;
@@ -172,7 +172,7 @@
 }
 
 .splashScreen {
-	background-color: #00c478;
+	background-color: #ff0000;
 	text-align: center;
 	width: 100%;
 	height: 100%;
