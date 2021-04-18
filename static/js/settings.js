@@ -1,50 +1,6 @@
 let promptSound = new Audio("/static/sounds/prompt_generic.mp3");
 
-function retriveWallpaper() {
-    retrivedData = JSON.parse(localStorage.getItem("selectedWallpaper"));
-    
-    
-    if (retrivedData == "wall1") {
-        let wall = document.getElementById("bag");
-        wall.style.backgroundImage = ("url('wallpapers/kde1.png')")
-        console.log("bg set");
-    }
 
-    if (retrivedData == "wall2") {
-        let wall = document.getElementById("bag");
-        wall.style.backgroundImage = ("url('/static/wallpapers/wall2.jpeg')")
-        console.log("bg2 set");
-    }
-
-    if (retrivedData == "wall4") {
-        console.log("bg4 set");
-    }
-    
-    if (retrivedData == "outOfFocus") {
-		let wall = document.getElementById("bag");
-		wall.style.backgroundImage = ("url('/static/wallpapers/outOfFocus.jpg')");
-	}
-	
-	 if (retrivedData == "droplet") {
-		let wall = document.getElementById("bag");
-		wall.style.backgroundImage = ("url('/static/wallpapers/droplet.jpg')");
-	}
-	
-	 if (retrivedData == "pinkFlower") {
-		let wall = document.getElementById("bag");
-		wall.style.backgroundImage = ("url('/static/wallpapers/pinkFlower.jpg')");
-	}
-	
-	 if (retrivedData == "plantPot") {
-		let wall = document.getElementById("bag");
-		wall.style.backgroundImage = ("url('/static/wallpapers/plantPot.jpg')");
-    }
-    
-    if (retrivedData == "risingSun") {
-		let wall = document.getElementById("bag");
-		wall.style.backgroundImage = ("url('/static/wallpapers/risingSun.jpg')");
-	}
-}
 
 function clearAll() {
     let prompt = document.getElementById("prompt");
@@ -104,13 +60,3 @@ function wallpaper() {
     wallpaper.style.display = ("block");
     
 }
-
-function setWallpaper(idd) {
-    selectedWallpaper = idd;
-    localStorage.setItem("selectedWallpaper", JSON.stringify(selectedWallpaper));
-}
-
-setTimeout(function(){
-    retriveWallpaper();
-
-}, 500); 
