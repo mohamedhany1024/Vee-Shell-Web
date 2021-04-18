@@ -23,4 +23,4 @@ Now That You Have all Of The Dependencies It's Time To Run Vee Shell. First You'
 ```
 flask run
 ```
-And That's it vee Shell is Now Running Now Open Your Web Browser(firefox Or chromium) And Type In The Adress Bar ```127.0.0.1:500``` Then Hit Enter. And That's It. Now You're Succesfully Using Vee Shell
+And That's it vee Shell is Now Running Now Open Your Web Browser(firefox Or chromium) And Type In The Adress Bar ```127.0.0.1:5000``` Then Hit Enter. And That's It. Now You're Succesfully Using Vee Shell
