@@ -26,14 +26,12 @@
 	background-color: #ffffff6b;
 	font-family: sans-serif;
 	font-size: 180%;
-	//box-shadow: 0 10px 15px #aaaaaa;
 	border-radius: 8px;
 	border: none;
 }
 
 .titleBar p {
 	padding: 8px;
-	
 }
 
 .btn {

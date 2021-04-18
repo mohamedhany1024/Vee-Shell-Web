@@ -40,7 +40,7 @@ a {
     text-align: center;
     border-radius: 10px;
     display: none;
-    background-color: rgba(0, 0, 0, 0.37);
+    background-color: rgba(0, 0, 0, 0.575);
 }
 
 #powerOff {
@@ -84,3 +84,6 @@ iframe {
     height: 100%;
 }
 
+.powerText {
+    color: white;
+}

@@ -18,11 +18,11 @@
             <button class="dialogueBtn" onclick="clearData()">Clear</button>
             <button class="dialogueBtn" onclick="cancel()">Cancel</button>
         </div>
-        <div class="titleBar">
-            <a href="{{ url_for('settings') }}"><img src="{{ url_for('static', filename='images/back_ico.png') }}" width="40" id="btn" onclick="back()" class="btn"></a>
-            <p>Settings</p>
-        </div>
-        <div class="storage" id="storage">
+        <div class="screen" id="storage">
+            <div class="titleBar">
+                <img src="{{ url_for('static', filename='images/back_ico.png') }}" width="40" id="btn" onclick="openScreen('main')" class="btn">
+                <p>Storage</p>
+            </div>
             <h3 class="textBlock">Storage Space</h3>
             <div class="textBlock">
                 <h4>Information About Your Device's Storage Space.</h4>
@@ -36,18 +36,25 @@
             </div>
             <button onclick="clearAll()" class="btn" id="clear">Clear Data</button>
         </div>
-        <div class="wallpaper" id="wallpaper">
+        <div class="screen" id="wallpaper">
+            <div class="titleBar">
+                <img src="{{ url_for('static', filename='images/back_ico.png') }}" width="40" id="btn" onclick="openScreen('main')" class="btn">
+                <p>Wallpapers</p>
+            </div>
             <h3 class="textBlock">Wallpapers</h3>
             <div class="textBlock"><p>Current Wallpaper: {{ wallpaper }}</p></div>
-            <a href="http://127.0.0.1:5000/wall2"><img src="{{ url_for('static', filename='wallpapers/wall2.jpeg') }}" height="150" width="90" onclick="setWallpaper(this.id)" id="wall2"></a>
-            <a href="http://127.0.0.1:5000/outOfFocus"><img src="{{ url_for('static', filename='wallpapers/outOfFocus.jpg') }}" height="150" width="90" onclick="setWallpaper(this.id)" id="outOfFocus"></a>
-            <a href="http://127.0.0.1:5000/droplet"><img src="{{ url_for('static', filename='wallpapers/droplet.jpg') }}" height="150" width="90" onclick="setWallpaper(this.id)" id="droplet"></a>
-                <a href="http://127.0.0.1:5000/pinkFlower"><img src="{{ url_for('static', filename='wallpapers/pinkFlower.jpg') }}" height="150" width="90" onclick="setWallpaper(this.id)" id="pinkFlower"></a>
-                <a href="http://127.0.0.1:5000/plantPot"><img src="{{ url_for('static', filename='wallpapers/plantPot.jpg') }}" height="150" width="90" onclick="setWallpaper(this.id)" id="plantPot"></a>
-                <a href="http://127.0.0.1:5000/risingSun"><img src="{{ url_for('static', filename='wallpapers/risingSun.jpg') }}" height="150" width="90" onclick="setWallpaper(this.id)" id="risingSun"></a>
-            <p class="textBlock">Warning: In Order For Your Changes To Be applied Vee Shell Will Restart It's self. You may See Some Programs Open & Close. This is just Vee Shell Restarting.</p>
+            <a href="http://127.0.0.1:5000/wall2"><img src="{{ url_for('static', filename='wallpapers/wall2.jpeg') }}" height="150" width="90" onclick=" id="wall2"></a>
+            <a href="http://127.0.0.1:5000/outOfFocus"><img src="{{ url_for('static', filename='wallpapers/outOfFocus.jpg') }}" height="150" width="90"  id="outOfFocus"></a>
+            <a href="http://127.0.0.1:5000/droplet"><img src="{{ url_for('static', filename='wallpapers/droplet.jpg') }}" height="150" width="90"  id="droplet"></a>
+                <a href="http://127.0.0.1:5000/pinkFlower"><img src="{{ url_for('static', filename='wallpapers/pinkFlower.jpg') }}" height="150" width="90" id="pinkFlower"></a>
+                <a href="http://127.0.0.1:5000/plantPot"><img src="{{ url_for('static', filename='wallpapers/plantPot.jpg') }}" height="150" width="90" id="plantPot"></a>
+                <a href="http://127.0.0.1:5000/risingSun"><img src="{{ url_for('static', filename='wallpapers/risingSun.jpg') }}" height="150" width="90" id="risingSun"></a>
         </div>
-        <div class="about" id="about">
+        <div class="screen" id="about">
+            <div class="titleBar">
+                <img src="{{ url_for('static', filename='images/back_ico.png') }}" width="40" id="btn" onclick="openScreen('main')" class="btn">
+                <p>About</p>
+            </div>
             <div class="textBlock">
                 <p>Vee Shell Version: 0.8 Alpha</p>
                 <p id="screenRes">screen resolution</p>
@@ -56,8 +63,12 @@
                 <p>Total Storage Space: {{stGig}}GB</p>
             </div>
         </div>
-        <div class="options" id="options">
-            <div class="menuOption" onclick="wallpaper()">
+        <div class="screen" id="main">
+            <div class="titleBar">
+                <p>Settings</p>
+            </div>
+
+            <div class="menuOption" onclick="openScreen('wallpaper')">
                 <img src="{{ url_for('static', filename='images/wall_ico.png') }}" width="30" class="menuImage">
                 <p class="menuLabel">Wallpaper</p>
             </div>
@@ -67,12 +78,12 @@
                 <p class="menuLabel">Fonts</p>
             </div>
             
-            <div class="menuOption" onclick="storage()">
+            <div class="menuOption" onclick="openScreen('storage')">
                 <img src="{{ url_for('static', filename='images/storage_ico.png') }}" width="30" class="menuImage">
                 <p class="menuLabel">Storage</p>
             </div>
             
-            <div class="menuOption" onclick="about()">
+            <div class="menuOption" onclick="openScreen('about')">
                 <img src="{{ url_for('static', filename='images/about_ico.png') }}" width="30" class="menuImage">
                 <p class="menuLabel">About</p>
             </div>

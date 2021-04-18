@@ -1,5 +1,5 @@
 let promptSound = new Audio("/static/sounds/prompt_generic.mp3");
-
+document.getElementById("screenRes").innerHTML = ("Screen Resolution: " + screen.width + "X" + screen.height);
 
 
 function clearAll() {
@@ -26,7 +26,6 @@ function about() {
     options.style.display = ("none");
     about.style.display = ("block");
     btn.style.display = ("inline");
-    document.getElementById("screenRes").innerHTML = ("Screen Resolution: " + screen.width + "X" + screen.height);
 }
 
 function storage() {

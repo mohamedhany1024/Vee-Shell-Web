@@ -7,7 +7,7 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
 f2 = open("currentWallpaper.txt", "r")
 wallpaper = f2.read()
-#os.system("firefox 127.0.0.1:5000/")
+
 stat = shutil.disk_usage('/')
 stGig = stat[0]
 frGig = stat[2]
@@ -47,8 +47,7 @@ def settings():
 		memGig = round(memGig, 1)
 		
 		x += 1
-		print("Memory Size In Gigabytes: ")
-		print(memGig)
+		
 	command = "cat /proc/cpuinfo"
 	returnedValue = subprocess.check_output(command, shell=True).strip().decode()
 	for line in returnedValue.split("\n"):
@@ -75,7 +74,7 @@ def browser():
 def wall(wall):
 	f = open("currentWallpaper.txt", "r+")
 	f.truncate(0)
-	print("Wallpaper Name " + wallpaper)
+	
 	if wall == "outOfFocus":
 		f.write("outOfFocus.jpg")
 		f.close()
@@ -105,7 +104,7 @@ def wall(wall):
 		f.write("risingSun.jpg")
 		f.close()
 		
-	return render_template("settings.html")
+	return render_template("changes.html")
 
 @app.route('/restart')
 

@@ -12,9 +12,9 @@
 	<div class="backgroundHome" id="backgroundHome"></div>
     <div id="powerMenu" class="powerOptions" onclick="exitPower()">
         <img id="powerOff" src="{{ url_for('static', filename='images/power.png') }}" width="120" onclick="power()">
-        <p>Power Off</p>
+        <p class="powerText">Power Off</p>
         <a href="{{ url_for('restart') }}"><img id="powerOff" src="{{ url_for('static', filename='images/restart.png') }}" width="120"></a>
-        <p>Restart</p>
+        <p class="powerText">Restart</p>
     </div>
     <script src="{{ url_for('static', filename='js/home.js') }}"></script>
     <div class="menu" id="menu">
