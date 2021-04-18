@@ -7,22 +7,23 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
 f2 = open("currentWallpaper.txt", "r")
 wallpaper = f2.read()
-os.system("firefox 127.0.0.1:5000/")
+#os.system("firefox 127.0.0.1:5000/")
 stat = shutil.disk_usage('/')
 stGig = stat[0]
 frGig = stat[2]
+
 for i in range(3):
 	stGig /=1024
 	frGig /=1024
+	
 frGig = round(frGig, 1)
 stGig = round(stGig, 1)
 usGig = stGig - frGig
+usGig = round(usGig, 1)
 
 
 
-def restartBackend():
-	os.system("gnome-terminal -e ./restart.sh")
-
+	
 @app.route('/')
 
 def index():
@@ -78,36 +79,36 @@ def wall(wall):
 	if wall == "outOfFocus":
 		f.write("outOfFocus.jpg")
 		f.close()
-		restartBackend()
+		
 
 	elif wall == "droplet":
 		f.write("droplet.jpg")
 		f.close()
-		restartBackend()
+		
 	
 	elif wall == "wall2":
 		f.write("wall2.jpeg")
 		f.close()
-		restartBackend()
+		
 
 	elif wall == "pinkFlower":
 		f.write("pinkFlower.jpg")
 		f.close()
-		restartBackend()
+		
 
 	elif wall == "plantPot":
 		f.write("plantPot.jpg")
 		f.close()
-		restartBackend()
+		
 	
 	elif wall == "risingSun":
 		f.write("risingSun.jpg")
 		f.close()
-		restartBackend()
+		
 	return render_template("settings.html")
 
 @app.route('/restart')
 
 def restart():
-	restartBackend()
+	
 	return "Restarting"
