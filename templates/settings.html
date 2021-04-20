@@ -7,6 +7,7 @@
     <title>Settings</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/shellUI.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/settings.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
 </head>
 <body>
 	<div class="splashScreen" id="splashScreen"><p id="splash">Settings</p></div>
@@ -43,7 +44,7 @@
             </div>
             <h3 class="textBlock">Wallpapers</h3>
             <div class="textBlock"><p>Current Wallpaper: {{ wallpaper }}</p></div>
-            <a href="http://127.0.0.1:5000/wall2"><img src="{{ url_for('static', filename='wallpapers/wall2.jpeg') }}" height="150" width="90" onclick=" id="wall2"></a>
+            <a href="http://127.0.0.1:5000/wall2"><img src="{{ url_for('static', filename='wallpapers/wall2.jpeg') }}" height="150" width="90" id="wall2"></a>
             <a href="http://127.0.0.1:5000/outOfFocus"><img src="{{ url_for('static', filename='wallpapers/outOfFocus.jpg') }}" height="150" width="90"  id="outOfFocus"></a>
             <a href="http://127.0.0.1:5000/droplet"><img src="{{ url_for('static', filename='wallpapers/droplet.jpg') }}" height="150" width="90"  id="droplet"></a>
                 <a href="http://127.0.0.1:5000/pinkFlower"><img src="{{ url_for('static', filename='wallpapers/pinkFlower.jpg') }}" height="150" width="90" id="pinkFlower"></a>
@@ -245,7 +246,6 @@
                 #vBoard {
                     text-align: center;
                     background-color: #252525;
-                    //box-shadow: 0px -10px 20px #aaaaaa;
                     animation: 0.4s ease-out 0s 1 slideUP;
                 }
         

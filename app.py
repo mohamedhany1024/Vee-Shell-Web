@@ -71,7 +71,7 @@ def browser():
 
 @app.route("/<string:wall>")
 
-def wall(wall):
+def wallpaperSetter(wall):
 	f = open("currentWallpaper.txt", "r+")
 	f.truncate(0)
 	
