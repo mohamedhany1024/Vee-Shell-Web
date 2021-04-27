@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vee shell</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/shellUI.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+</head>
+<body id="body">
+	<div class="backgroundHome" id="backgroundHome"></div>
+    <div id="powerMenu" class="powerOptions" onclick="exitPower()">
+        <img id="powerOff" src="{{ url_for('static', filename='images/power.png') }}" width="120" onclick="power()">
+        <p class="powerText">Power Off</p>
+        <a href="{{ url_for('restart') }}"><img id="powerOff" src="{{ url_for('static', filename='images/restart.png') }}" width="120"></a>
+        <p class="powerText">Restart</p>
+    </div>
+    <script src="{{ url_for('static', filename='js/home.js') }}"></script>
+    <div class="menu" id="menu">
+        <h1 class="textBlock">Apps</h1>
+        <ul>
+            <a href ="{{ url_for('dialler') }}">
+				<img class="icon" src="{{ url_for('static', filename='images/dialler.png') }}" id="dialler" width="80">
+				<p class="label">Dialler</p> 
+            </a>
+            <a href="{{ url_for('browser') }}">
+                <img class="icon" src="{{ url_for('static', filename='images/browser.png') }}" id="browser" width="80">
+                <p class="label">Web Browser</p>
+            </a>
+            <a href="{{ url_for('settings') }}">
+                <img class="icon" src="{{ url_for('static', filename='images/settings.png') }}" width="80">
+                <p class="label">Settings</p>
+            </a>
+            <a href="{{ url_for('calc') }}">
+                <img class="icon" src="{{ url_for('static', filename='images/calculator.png') }}" id="calc" width="80">
+                <p class="label">Calculator</p>
+            </a> 
+            <img src="{{ url_for('static', filename='images/power.png') }}" width="80" onclick="power()" id="powerBtn">
+        </ul>
+        <ul id="row2">   
+        </ul>
+    </div> 
+    <style>
+        .backgroundHome {
+            background-image: url('../static/wallpapers/{{ wallpaper }}');
+        }
+    </style>
+</body>
+</html>

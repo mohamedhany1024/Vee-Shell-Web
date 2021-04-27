@@ -1,0 +1,185 @@
+* {
+	font-family: sans-serif;
+}
+
+@keyframes screenOpen {
+	0% {
+		transform: translateX(-100%);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@keyframes prompt {
+	0% {
+		transform: translateY(-100%);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}
+
+.titleBar {
+	background-color: #ffffff6b;
+	font-family: sans-serif;
+	font-size: 180%;
+	border-radius: 8px;
+	border: none;
+}
+
+.titleBar p {
+	padding: 8px;
+}
+
+.btn {
+	background-color: #ffffff8a;
+	border: none;
+	font-size: 150%;
+	border-radius: 10px;
+	padding: 8px;
+	transition: background-color 0.3s ease-in-out;
+}
+
+.btn:hover {
+	background-color: rgba(255, 255, 255, 0.411);
+}
+
+.btn:active {
+	background-color: rgba(255, 255, 255, 0.781)
+}
+
+.editText {
+	background-color: white;
+	border: none;
+	border-radius: 10px;
+	color: black;
+	transition: all 0.3s ease-im-out;
+}
+
+.editText:hover {
+	box-shadow: 0 0 15px #aaaaaa;
+}
+
+.textBlock {
+	background-color:  #ffffff8a;
+	border-radius: 10px;
+	margin-bottom: 8px;
+}
+
+.menuOption {
+	background-color: #ffffff8a;
+	border-radius: 10px;
+	justify-content: center;
+	align-items: center;
+	transition: background-color 0.3s ease-in-out;
+	margin-bottom: 8px;
+}
+
+.menuOption:hover {
+	background-color: rgba(255, 255, 255, 0.411);
+}
+
+.menuImage {
+	padding-left: 10px;
+}
+
+.menuLabel {
+	display: inline-flex;
+}
+
+.imageBtn {
+	background-color: #ffffff8a;
+	border-radius: 10px;
+	border: none;
+	transition: background-color 0.3s ease-in-out;
+}
+
+.imageBtn:hover {
+	background-color: rgba(255, 255, 255, 0.411);
+}
+
+.grid2 {
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-gap: 10px;
+}
+
+.grid3 {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	grid-gap: 10px;
+}
+
+.grid4 {
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	grid-gap: 10px;
+}
+
+.grid5 {
+	display: grid;
+	grid-template-columns: auto auto auto auto auto;
+	grid-gap: 10px;
+}
+
+
+
+.dialogueBox {
+	position: fixed;
+    background-color: white;
+    box-shadow: #aaaaaa 0 0 10px;
+	width: 100%;
+	animation: 0.5s ease-out 0s 1 prompt;
+}
+
+.dialogueBtn {
+	background-color: #006eff;
+    color: white;
+    font-size: 150%;
+	border: none;
+	padding: 8px;
+}
+
+.background {
+	background-image: url('../wallpapers/wall2.jpeg');
+    position: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    filter: blur(13px);
+}
+
+.backgroundHome {
+	background-image: url('../wallpapers/wall2.jpeg');
+    position: fixed;
+    background-repeat: no-repeat;
+	background-size: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.screen {
+	display: none;
+	animation: 0.5s ease-out 0s 1 screenOpen;
+}
+
+.splashScreen {
+	background-color: #ff0000;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	position: fixed;
+}
+
+.label {
+	background-color:  #ffffff8a;
+	border-radius: 5px;
+	display: table;
+}

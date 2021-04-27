@@ -1,0 +1,302 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Calculator</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/shellUI.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/calc.css') }}">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+	</head>
+	<body>
+		<div class="background"></div>
+		<div class="titleBar"><p>Calculator</p></div>
+		<div class="textBlock">
+            <div class="display">
+			    <p id="num1"></p>
+			    <p id="operator"></p>
+			    <p id="num2"></p>
+			    <p id="result"></p>
+            </div>
+        </div>
+		
+		<div class="grid3">
+			<button class="btn" id="7" onclick="number(this.id)">7</button>
+			<button class="btn" id="8" onclick="number(this.id)">8</button>
+			<button class="btn" id="9" onclick="number(this.id)">9</button>
+			<button class="btn" id="6" onclick="number(this.id)">6</button>
+			<button class="btn" id="5" onclick="number(this.id)">5</button>
+			<button class="btn" id="4" onclick="number(this.id)">4</button>
+			<button class="btn" id="3" onclick="number(this.id)">3</button>
+			<button class="btn" id="2" onclick="number(this.id)">2</button>
+			<button class="btn" id="1" onclick="number(this.id)">1</button>
+			<button class="btn" id="0" onclick="number(this.id)">0</button>
+
+		</div>
+		
+		<div class="textBlock">
+			<a href = "{{ url_for('calc') }}">
+				<button class="btn" onclick="clear()">CE</button>
+			</a>
+			<button class="btn" id="+" onclick="operator(this.id)">+</button>
+			<button class="btn" id="-" onclick="operator(this.id)">-</button>
+			<button class="btn" id="/" onclick="operator(this.id)">/</button>
+			<button class="btn" id="*" onclick="operator(this.id)">x</button>
+			<button class="btn" onclick="getResult()">=</button>
+		</div>
+	<!--__________________________________vBoard Goes Here_______________________________________-->
+    <!--This HTML Code is Self Independent. It means That You can Copy This Code To the End of Your Web app
+        and Have The default Vee-Shell keyboard and Navigation-bar With no Problems-->
+        <div class="board-warp">
+            <div id="vBoard">
+        
+                <div class="numbers" id="hidden">
+                    <input type="button" value="0" onclick='v("0")' id="key">
+                    <input type="button" value="1" onclick='v("1")' id="key">
+                    <input type="button" value="2" onclick='v("2")' id="key">
+                    <input type="button" value="3" onclick='v("3")' id="key">
+                    <input type="button" value="4" onclick='v("4")' id="key">
+                    <input type="button" value="5" onclick='v("5")' id="key">
+                    <input type="button" value="6" onclick='v("6")' id="key">
+                    <input type="button" value="7" onclick='v("7")' id="key">
+                    <input type="button" value="8" onclick='v("8")' id="key">
+                    <input type="button" value="9" onclick='v("9")' id="key">
+                </div>
+        
+                <div class="row1" id="hidden1">
+                    <input type="button" value="q" onclick='v("q")' id="key">
+                    <input type="button" value="w" onclick='v("w")' id="key">
+                    <input type="button" value="e" onclick='v("e")' id="key">
+                    <input type="button" value="r" onclick='v("r")' id="key">
+                    <input type="button" value="t" onclick='v("t")' id="key">
+                    <input type="button" value="y" onclick='v("y")' id="key">
+                    <input type="button" value="u" onclick='v("u")' id="key">
+                    <input type="button" value="i" onclick='v("i")' id="key">
+                    <input type="button" value="o" onclick='v("o")' id="key">
+                    <input type="button" value="p" onclick='v("p")' id="key">
+                    <input type="button" value="{" onclick='v("{")' id="key">
+                    <input type="button" value="del" onclick="del()" id="key">
+                </div>
+                <div class="row2" id="hidden2">
+                    <input type="button" value="a" onclick='v("a")' id="key">
+                    <input type="button" value="s" onclick='v("s")' id="key">
+                    <input type="button" value="d" onclick='v("d")' id="key">
+                    <input type="button" value="f" onclick='v("f")' id="key">
+                    <input type="button" value="g" onclick='v("g")' id="key">
+                    <input type="button" value="h" onclick='v("h")' id="key">
+                    <input type="button" value="j" onclick='v("j")' id="key">
+                    <input type="button" value="k" onclick='v("k")' id="key">
+                    <input type="button" value="l" onclick='v("l")' id="key">
+                    <input type="button" value=":" onclick='v(":")' id="key">
+                    <input type="button" value="/" onclick='v("/")' id="key">
+        
+                </div>
+        
+                <div class="row3" id="hidden3">
+                    <input type="button" value="Sh" onclick='v("")' id="key">
+                    <input type="button" value="z" onclick='v("z")' id="key">
+                    <input type="button" value="x" onclick='v("x")' id="key">
+                    <input type="button" value="c" onclick='v("c")' id="key">
+                    <input type="button" value="v" onclick='v("v")' id="key">
+                    <input type="button" value="b" onclick='v("b")' id="key">
+                    <input type="button" value="n" onclick='v("n")' id="key">
+                    <input type="button" value="m" onclick='v("m")' id="key">
+                    <input type="button" value="," onclick='v(",")' id="key">
+                    <input type="button" value="." onclick='v(".")' id="key">
+        
+        
+                </div>
+        
+                <div class="spacebar" id="hidden4">
+                    <input type="button" value="Space" onclick='v(" ")' id="key">
+                </div>
+                <div class="navBar">
+                    <ul>
+                        <li id="home">
+                            <a href="{{ url_for('home') }}" id="home_link">
+                                H
+                            </a>
+                        </li>
+        
+                        <li id="showVBoard-li">
+                            <button onclick="showBoard()" id="toggleVBoard">/\</button>
+                        </li>
+                    </ul>
+        
+                </div>
+            </div>
+        
+            <style>
+                @keyframes slideUP {
+                    0% {
+                        transform: translateY(100%);
+                    }
+        
+                    100% {
+                        transform: translateY(0);
+                    }
+                }
+        
+                #home {
+                    text-align: center;
+                }
+        
+                #home_link {
+                    font-family: sans-serif;
+                    color: white;
+                    font-size: 190%;
+                }
+        
+                .navBar {
+                    background-color: #646464;
+        
+        
+                }
+        
+                #showVBoard-li {
+                    float: left;
+        
+                }
+        
+                #showVBoard {
+                    background-color: #646464;
+                    color: white;
+                    font-size: 190%;
+                }
+        
+                .navBar ul {
+                    overflow: hidden;
+                    list-style-type: none;
+                }
+        
+                .navBar li {
+                    float: right;
+                    width: 20%;
+                }
+        
+                #toggleVBoard {
+                    background-color: #646464;
+                    color: white;
+                    font-size: 190%;
+                    border-style: none;
+                }
+        
+                .board-warp {
+                    position: fixed;
+                    width: 100%;
+                    left: 0;
+                    bottom: 0;
+                    padding: 0 0;
+                    user-select: none;
+                    transition: bottom 0.4s;
+                }
+        
+                #vBoard {
+                    text-align: center;
+                    background-color: #252525;
+                    animation: 0.4s ease-out 0s 1 slideUP;
+                }
+        
+                #key {
+                    height: 45px;
+                    width: 6%;
+                    max-width: 90px;
+                    font-size: 1.05rem;
+                    -webkit-tap-highlight-color: transparent;
+                    background-color: #505050;
+                    color: #ffffff;
+                    border-radius: 9px;
+                    border: none;
+                    margin: 0.3vw;
+                    outline: none;
+                    cursor: pointer;
+                }
+        
+                #key:hover {
+                    background-color: #00c478;
+                }
+        
+                .numbers {
+                    background-color: #161616;
+                }
+        
+                .row2 {
+                    padding-right: 7%;
+                }
+        
+                .row3 {
+                    padding-right: 5%;
+                }
+        
+                #searchBtn {
+                    background-color: #00f829;
+                    border-style: none;
+                    color: white;
+                    border-top-right-radius: 7px;
+                    border-bottom-right-radius: 7px;
+                    font-size: 100%;
+                }
+            </style>
+        
+            <script>
+                /*when Any Of the buttons is Pressed any input Field that has an id of editText.
+               will Recieve the value of the button Which the user Pressed*/
+                var focusedElement = null
+    
+                function v(val) {
+                    document.getElementById(focusedElement).value += val;
+                    var audio = new Audio("../static/sounds/key_press.wav");
+                    audio.play();
+                }
+    
+                function del() {
+                    let tArea = document.getElementById(focusedElement);
+                    tArea.value = tArea.value.substring(0, tArea.value.length - 1);
+                    var audio = new Audio('sounds/key_press.wav');
+                    audio.play();
+                }
+    
+                function getFocus(idd) {
+                    focusedElement = idd;
+                    console.log(focusedElement + " is getting Focus");
+                }
+    
+                function showBoard() {
+                    var kb = document.getElementById("hidden");
+                    var kb1 = document.getElementById("hidden1");
+                    var kb2 = document.getElementById("hidden2");
+                    var kb3 = document.getElementById("hidden3");
+                    var kb4 = document.getElementById("hidden4");
+    
+                    if (kb.style.display === "none") {
+                        kb.style.display = "block";
+                        kb1.style.display = "block";
+                        kb2.style.display = "block";
+                        kb3.style.display = "block";
+                        kb4.style.display = "block";
+                    } else {
+                        kb.style.display = "none";
+                        kb1.style.display = "none";
+                        kb2.style.display = "none";
+                        kb3.style.display = "none";
+                        kb4.style.display = "none";
+                    }
+    
+                }
+    
+            </script>
+    
+        </div>
+        </div>
+        </div>
+        <style>
+            .background {
+                background-image: url('../static/wallpapers/{{ wallpaper }}');
+            }
+        </style>
+
+		<script src="{{ url_for('static', filename='js/calc.js') }}"></script>
+	</body>
+</html>
