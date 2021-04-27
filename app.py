@@ -75,34 +75,7 @@ def wallpaperSetter(wall):
 	f = open("currentWallpaper.txt", "r+")
 	f.truncate(0)
 	
-	if wall == "outOfFocus":
-		f.write("outOfFocus.jpg")
-		f.close()
-		
-
-	elif wall == "droplet":
-		f.write("droplet.jpg")
-		f.close()
-		
-	
-	elif wall == "wall2":
-		f.write("wall2.jpeg")
-		f.close()
-		
-
-	elif wall == "pinkFlower":
-		f.write("pinkFlower.jpg")
-		f.close()
-		
-
-	elif wall == "plantPot":
-		f.write("plantPot.jpg")
-		f.close()
-		
-	
-	elif wall == "risingSun":
-		f.write("risingSun.jpg")
-		f.close()
+	f.write(wall + ".jpg")
 		
 	return render_template("changes.html")
 
