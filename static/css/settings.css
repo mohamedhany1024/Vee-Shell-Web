@@ -23,14 +23,6 @@
     filter: blur(10px);
 }
 
-/*h4 {
-    color: white;
-    font-size: 150%;
-    font-family: sans-serif;
-    text-align: center;
-    display: inline;
-    padding-left: 2vh;
-}*/
 
 .titleBar p {
     color: black;
@@ -76,10 +68,7 @@
     display: none;
 }
 
-#prompt {
-    display: none;
-    position: fixed;
-    background-color: white;
-    box-shadow: #aaaaaa 0 0 10px;
-    width: 100%;
+
+.splashScreen {
+    background-color: #ff0000;
 }

@@ -47,7 +47,7 @@ def settings():
 		memGig = round(memGig, 1)
 		
 		x += 1
-		
+	cpu = ": Unknown CPU Model"
 	command = "cat /proc/cpuinfo"
 	returnedValue = subprocess.check_output(command, shell=True).strip().decode()
 	for line in returnedValue.split("\n"):
@@ -67,7 +67,12 @@ def dialler():
 @app.route('/browser')
 
 def browser():
-	return render_template('browser.html')
+	return render_template('browser.html', wallpaper=wallpaper)
+
+@app.route('/music')
+
+def music():
+	return render_template('music.html', wallpaper=wallpaper)
 
 @app.route("/<string:wall>")
 

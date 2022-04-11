@@ -111,3 +111,7 @@ webview {
 h5 {
   font-family: sans-serif;
 }
+
+.splashScreen {
+    background-color: #0095fe;
+}

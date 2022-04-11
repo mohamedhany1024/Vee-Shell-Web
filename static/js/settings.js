@@ -3,15 +3,13 @@ document.getElementById("screenRes").innerHTML = ("Screen Resolution: " + screen
 
 
 function clearAll() {
-    let prompt = document.getElementById("prompt");
-    prompt.style.display = ("block");
+    openDialogue("prompt");
     promptSound.play();
 }
 
 function clearData () {
     localStorage.removeItem("selectedWallpaper");
-    let prompt = document.getElementById("prompt");
-    prompt.style.display = ("none");
+    closeDialogue("prompt");
 }
 
 function cancel() {
