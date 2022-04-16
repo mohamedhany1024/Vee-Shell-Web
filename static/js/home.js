@@ -1,6 +1,23 @@
 let powerMenu = document.getElementById("powerMenu");
 powerMenu.style.display = "none";
 
+setInterval(updateTime, 1000)
+function updateTime() {
+    let time = new Date();
+    let hrs = time.getHours();
+    let amOrpm = "AM";
+    if (hrs > 12) {
+        hrs = hrs - 12;
+        amOrpm = "PM";
+    }
+
+    if (hrs == 0) {
+        hrs = 12
+        amOrpm = "AM"
+    }
+    document.getElementById("clock").innerText = hrs + ":" + time.getMinutes() + ":" + time.getSeconds() + " "  + amOrpm;
+}
+
 function power() {
     let bg = document.getElementById("menu");
     let power = document.getElementById("powerMenu");
@@ -43,21 +60,33 @@ let appsState = 1;
 
 function toggleApps() {
     let apps = document.getElementById("menu");
+    let clockContainer = document.getElementById("clock-container");
+    let clock = document.getElementById("clock");
     if (appsState == 1) {
         apps.style.display = "block";
-        setTimeout(()=>{
-            apps.classList.toggle("menu--collapse");
-        }, 10);
-        
+        clockContainer.classList.toggle("clock-container--opened");
+
+        //apps.classList.toggle("menu--collapse");
+        setTimeout(() => {
+            clockContainer.style.display = "none";
+            setTimeout(() => {
+                apps.classList.toggle("menu--collapse");
+            }, 10);
+        }, 400);
+
+
         appsState = 0;
         console.log(appsState);
         
     } else {
+        clockContainer.style.display = "block";
+
         apps.classList.toggle("menu--collapse");
         appsState = 1;
         console.log(appsState);
         setTimeout(()=> {
             apps.style.display = "none";
+            clockContainer.classList.toggle("clock-container--opened");
         }, 400);
     }
 }

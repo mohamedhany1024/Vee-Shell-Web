@@ -14,6 +14,7 @@
 <body id="body">
     <div class="homeWrapper">
         <div class="backgroundHome" id="backgroundHome"></div>
+        
         <div class="appViewer">
             <iframe id="appViewer"></iframe>
         </div>
@@ -29,6 +30,9 @@
             <h1 id="left" onclick="toggleApps()">Apps</h1>
             <p id="right"><img src="{{ url_for('static', filename='images/btnUp.png') }}" width="20"></p>
 
+        </div>
+        <div class="clock-container" id="clock-container">
+            <p class="clock" id="clock">00:00</p>
         </div>
         <div class="menu" id="menu">
 
@@ -162,12 +166,15 @@
 
             #home {
                 text-align: center;
+                color: white;
+                font-size: 4vh;
+                
             }
 
             #home_link {
                 font-family: sans-serif;
                 color: white;
-                font-size: 190%;
+                font-size: 4vh;
             }
 
             .navBar {
@@ -177,13 +184,13 @@
 
             #showVBoard-li {
                 float: left;
-
+                font-size: 4vh;
             }
 
             #showVBoard {
                 background-color: #646464;
                 color: white;
-                font-size: 190%;
+                /*font-size: 190%;*/
             }
 
             .navBar ul {
@@ -273,18 +280,18 @@
             function homeScreen() {
                 document.getElementById("appViewer").style.display = "none";
             }
-
+            var press = new Audio("../static/sounds/key_press.wav");
             function v(val) {
                 appContainer.contentWindow.document.getElementById(focusedElement).value += val;
-                var audio = new Audio("../static/sounds/key_press.wav");
-                audio.play();
+                
+                press.play();
             }
-
+            var dele = new Audio('../static/sounds/key_del.wav');
             function del() {
                 let tArea = appContainer.contentWindow.document.getElementById(focusedElement);
                 tArea.value = tArea.value.substring(0, tArea.value.length - 1);
-                var audio = new Audio('sounds/key_press.wav');
-                audio.play();
+                
+                dele.play();
             }
 
             function getFocus(idd) {
