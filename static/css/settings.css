@@ -26,12 +26,21 @@
 
 .titleBar p {
     color: black;
-    display: inline;
-    padding-left: 2vh;
+    //display: inline;
+    padding: 8px;
     font-family: sans-serif;
+    //float: left;
+}
+
+.titleBar img {
+    //float: left;
+    //height: auto;
 }
 
 .titleBar {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
     margin-bottom: 30px;
 }
 

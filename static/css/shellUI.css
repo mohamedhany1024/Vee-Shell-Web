@@ -165,6 +165,7 @@
 	left: 0;
 	bottom: 0;
     z-index: -1;
+	transform: scale(1.2);
     filter: blur(13px);
 }
 

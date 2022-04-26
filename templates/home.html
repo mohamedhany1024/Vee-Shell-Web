@@ -14,7 +14,7 @@
 <body id="body">
     <div class="homeWrapper">
         <div class="backgroundHome" id="backgroundHome"></div>
-        
+        <img src="../static/wallpapers/{{ wallpaper }}" style="display: none;" id="bgImg">
         <div class="appViewer">
             <iframe id="appViewer"></iframe>
         </div>
@@ -25,7 +25,7 @@
                     src="{{ url_for('static', filename='images/restart.png') }}" width="120"></a>
             <p class="powerText">Restart</p>
         </div>
-        <script src="{{ url_for('static', filename='js/home.js') }}"></script>
+        
         <div class="appGrid" onclick="toggleApps()">
             <h1 id="left" onclick="toggleApps()">Apps</h1>
             <p id="right"><img src="{{ url_for('static', filename='images/btnUp.png') }}" width="20"></p>
@@ -78,66 +78,66 @@
         <div id="vBoard">
 
             <div class="numbers" id="hidden">
-                <input type="button" value="0" onclick='v("0")' id="key">
-                <input type="button" value="1" onclick='v("1")' id="key">
-                <input type="button" value="2" onclick='v("2")' id="key">
-                <input type="button" value="3" onclick='v("3")' id="key">
-                <input type="button" value="4" onclick='v("4")' id="key">
-                <input type="button" value="5" onclick='v("5")' id="key">
-                <input type="button" value="6" onclick='v("6")' id="key">
-                <input type="button" value="7" onclick='v("7")' id="key">
-                <input type="button" value="8" onclick='v("8")' id="key">
-                <input type="button" value="9" onclick='v("9")' id="key">
+                <input type="button" value="0" onclick='v("0")' id="key" class="key">
+                <input type="button" value="1" onclick='v("1")' id="key" class="key">
+                <input type="button" value="2" onclick='v("2")' id="key" class="key">
+                <input type="button" value="3" onclick='v("3")' id="key" class="key">
+                <input type="button" value="4" onclick='v("4")' id="key" class="key">
+                <input type="button" value="5" onclick='v("5")' id="key" class="key">
+                <input type="button" value="6" onclick='v("6")' id="key" class="key">
+                <input type="button" value="7" onclick='v("7")' id="key" class="key">
+                <input type="button" value="8" onclick='v("8")' id="key" class="key">
+                <input type="button" value="9" onclick='v("9")' id="key" class="key">
             </div>
 
             <div class="row1" id="hidden1">
-                <input type="button" value="q" onclick='v("q")' id="key">
-                <input type="button" value="w" onclick='v("w")' id="key">
-                <input type="button" value="e" onclick='v("e")' id="key">
-                <input type="button" value="r" onclick='v("r")' id="key">
-                <input type="button" value="t" onclick='v("t")' id="key">
-                <input type="button" value="y" onclick='v("y")' id="key">
-                <input type="button" value="u" onclick='v("u")' id="key">
-                <input type="button" value="i" onclick='v("i")' id="key">
-                <input type="button" value="o" onclick='v("o")' id="key">
-                <input type="button" value="p" onclick='v("p")' id="key">
-                <input type="button" value="{" onclick='v("{")' id="key">
-                <input type="button" value="del" onclick="del()" id="key">
+                <input type="button" value="q" onclick='v("q")' id="key" class="key">
+                <input type="button" value="w" onclick='v("w")' id="key" class="key">
+                <input type="button" value="e" onclick='v("e")' id="key" class="key">
+                <input type="button" value="r" onclick='v("r")' id="key" class="key">
+                <input type="button" value="t" onclick='v("t")' id="key" class="key">
+                <input type="button" value="y" onclick='v("y")' id="key" class="key">
+                <input type="button" value="u" onclick='v("u")' id="key" class="key">
+                <input type="button" value="i" onclick='v("i")' id="key" class="key">
+                <input type="button" value="o" onclick='v("o")' id="key" class="key">
+                <input type="button" value="p" onclick='v("p")' id="key" class="key">
+                <input type="button" value="{" onclick='v("{")' id="key" class="key">
+                <input type="button" value="del" onclick="del()" id="key" class="key">
             </div>
             <div class="row2" id="hidden2">
-                <input type="button" value="a" onclick='v("a")' id="key">
-                <input type="button" value="s" onclick='v("s")' id="key">
-                <input type="button" value="d" onclick='v("d")' id="key">
-                <input type="button" value="f" onclick='v("f")' id="key">
-                <input type="button" value="g" onclick='v("g")' id="key">
-                <input type="button" value="h" onclick='v("h")' id="key">
-                <input type="button" value="j" onclick='v("j")' id="key">
-                <input type="button" value="k" onclick='v("k")' id="key">
-                <input type="button" value="l" onclick='v("l")' id="key">
-                <input type="button" value=":" onclick='v(":")' id="key">
-                <input type="button" value="/" onclick='v("/")' id="key">
+                <input type="button" value="a" onclick='v("a")' id="key" class="key">
+                <input type="button" value="s" onclick='v("s")' id="key" class="key">
+                <input type="button" value="d" onclick='v("d")' id="key" class="key">
+                <input type="button" value="f" onclick='v("f")' id="key" class="key">
+                <input type="button" value="g" onclick='v("g")' id="key" class="key">
+                <input type="button" value="h" onclick='v("h")' id="key" class="key">
+                <input type="button" value="j" onclick='v("j")' id="key" class="key">
+                <input type="button" value="k" onclick='v("k")' id="key" class="key">
+                <input type="button" value="l" onclick='v("l")' id="key" class="key">
+                <input type="button" value=":" onclick='v(":")' id="key" class="key">
+                <input type="button" value="/" onclick='v("/")' id="key" class="key">
 
             </div>
 
             <div class="row3" id="hidden3">
-                <input type="button" value="Sh" onclick='v("")' id="key">
-                <input type="button" value="z" onclick='v("z")' id="key">
-                <input type="button" value="x" onclick='v("x")' id="key">
-                <input type="button" value="c" onclick='v("c")' id="key">
-                <input type="button" value="v" onclick='v("v")' id="key">
-                <input type="button" value="b" onclick='v("b")' id="key">
-                <input type="button" value="n" onclick='v("n")' id="key">
-                <input type="button" value="m" onclick='v("m")' id="key">
-                <input type="button" value="," onclick='v(",")' id="key">
-                <input type="button" value="." onclick='v(".")' id="key">
+                <input type="button" value="Sh" onclick='v("")' id="key" class="key">
+                <input type="button" value="z" onclick='v("z")' id="key" class="key">
+                <input type="button" value="x" onclick='v("x")' id="key" class="key">
+                <input type="button" value="c" onclick='v("c")' id="key" class="key">
+                <input type="button" value="v" onclick='v("v")' id="key" class="key">
+                <input type="button" value="b" onclick='v("b")' id="key" class="key">
+                <input type="button" value="n" onclick='v("n")' class="key" id="key">
+                <input type="button" value="m" onclick='v("m")' class="key" id="key">
+                <input type="button" value="," onclick='v(",")' class="key" id="key">
+                <input type="button" value="." onclick='v(".")' class="key" id="key">
 
 
             </div>
 
             <div class="spacebar" id="hidden4">
-                <input type="button" value="Space" onclick='v(" ")' id="key">
+                <input type="button" value="Space" onclick='v(" ")' id="key" class="key">
             </div>
-            <div class="navBar">
+            <div class="navBar" id="navBar">
                 <ul>
                     <li id="home" onclick="homeScreen()">
                         <!--<a href="{{ url_for('home') }}" id="home_link">-->
@@ -180,6 +180,7 @@
             .navBar {
                 background-color: #646464;
                 height: 10vh;
+                transition: all 0.4s ease-out;
             }
 
             #showVBoard-li {
@@ -188,7 +189,7 @@
             }
 
             #showVBoard {
-                background-color: #646464;
+                //background-color: #646464;
                 color: white;
                 /*font-size: 190%;*/
             }
@@ -229,6 +230,7 @@
 
                 margin-top: 0;
                 margin-bottom: 0;
+                transition: all 0.4s ease-out;
             }
 
             #key {
@@ -244,6 +246,7 @@
                 margin: 0.3vw;
                 outline: none;
                 cursor: pointer;
+                transition: all 0.4s ease-out;
             }
 
             #key:hover {
@@ -325,6 +328,8 @@
         </script>
 
     </div>
+    <script src="{{ url_for('static', filename='js/libs/colorTheif/color-theif.umd.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/home.js') }}"></script>
 </body>
 
 </html>
