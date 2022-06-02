@@ -4,9 +4,11 @@ powerMenu.style.display = "none";
 const colorThief = new ColorThief();
 const img = document.getElementById("bgImg");
 let dominantColor;
+let colorFetched = false;
+let r = 0, g = 0, b = 0;
 if (img.complete) {
     dominantColor = colorThief.getColor(img);
-    let r = dominantColor[0], g = dominantColor[1], b = dominantColor[2];
+     r = dominantColor[0], g = dominantColor[1], b = dominantColor[2];
     let dR = r * (3 / 4), dG = g * (3 / 4), dB = b * (3 / 4);
     let vR = r * (1 / 2), vG = g * (1 / 2), vB = b * (1 / 2);
     let keys = document.getElementsByClassName("key");
@@ -18,10 +20,11 @@ if (img.complete) {
     document.getElementById("vBoard").style.backgroundColor = "rgb(" + dR + "," + dG + "," + dB + ")";
     document.getElementById("key").style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
     document.getElementById("hidden").style.backgroundColor = "rgb(" + vR + "," + vG + "," + vB + ")";
+    colorFetched = true;
 } else {
     img.addEventListener('load', function () {
         dominantColor = colorThief.getColor(img);
-        let r = dominantColor[0], g = dominantColor[1], b = dominantColor[2];
+        r = dominantColor[0], g = dominantColor[1], b = dominantColor[2];
         let dR = r * (3 / 4), dG = g * (3 / 4), dB = b * (3 / 4);
         let vR = r * (1 / 2), vG = g * (1 / 2), vB = b * (1 / 2);
         let keys = document.getElementsByClassName("key");
@@ -33,11 +36,20 @@ if (img.complete) {
         document.getElementById("vBoard").style.backgroundColor = "rgb(" + dR + "," + dG + "," + dB + ")";
         document.getElementById("key").style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
         document.getElementById("hidden").style.backgroundColor = "rgb(" + vR + "," + vG + "," + vB + ")";
+        colorFetched = true;
     });
 }
 
 
+function getAccentColor() {
+    let colorObject = [r, g, b];
 
+    
+    if (colorFetched) {
+        return colorObject;
+    }
+    
+}
 
 
 setInterval(updateTime, 1000)

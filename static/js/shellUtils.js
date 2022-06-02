@@ -14,7 +14,13 @@ function checkAppLoad() {
 		
 		console.log("appFullyLoaded");
 		parent.showAppViewer();
+		let splashColor = parent.getAccentColor();
+		splashColor[0]*=(17/20);
+		splashColor[1]*=(17/20);
+		splashColor[2]*=(17/20);
+		document.getElementById("splashScreen").style.backgroundColor = "rgb("+splashColor[0]+", "+splashColor[1]+", "+splashColor[2]+")";
 		setTimeout(()=> {
+			
 			document.getElementById("splashScreen").classList.toggle("splashScreen--hide");
 
 			setTimeout(()=> {

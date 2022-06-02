@@ -16,12 +16,14 @@ h1 {
 }
 
 .icon {
+    background-color: #7e7e7e81;
+    border-radius: 30px;
     box-shadow: 0 0 15px #aaaaaa;
-    transition: box-shadow 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 .icon:hover {
-    background-color: cadetblue;
+    background-color: rgba(12, 201, 176, 0.664);
     box-shadow: 0 0 30px #aaaaaa;
 
 }

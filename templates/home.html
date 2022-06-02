@@ -135,7 +135,7 @@
             </div>
 
             <div class="spacebar" id="hidden4">
-                <input type="button" value="Space" onclick='v(" ")' id="key" class="key">
+                <input type="button" value="Space" onclick='v(" ")' id="spaceBar" class="key" name="spaceBar">
             </div>
             <div class="navBar" id="navBar">
                 <ul>
@@ -233,9 +233,11 @@
                 transition: all 0.4s ease-out;
             }
 
+            
+
             #key {
                 height: 45px;
-                width: 6%;
+                width: 6.333333%;
                 max-width: 90px;
                 font-size: 1.05rem;
                 -webkit-tap-highlight-color: transparent;
@@ -253,16 +255,34 @@
                 background-color: #00c478;
             }
 
+            
+
+            #spaceBar {
+                height: 45px;
+                width: 30%;
+                
+                font-size: 1.05rem;
+                -webkit-tap-highlight-color: transparent;
+                background-color: #505050;
+                color: #ffffff;
+                border-radius: 9px;
+                border: none;
+                margin: 0.3vw;
+                outline: none;
+                cursor: pointer;
+                transition: all 0.4s ease-out;
+            }
+
             .numbers {
                 background-color: #161616;
             }
 
             .row2 {
-                padding-right: 7%;
+                /*padding-right: 7%;*/
             }
 
             .row3 {
-                padding-right: 5%;
+                /*padding-right: 5%;*/
             }
 
             #searchBtn {

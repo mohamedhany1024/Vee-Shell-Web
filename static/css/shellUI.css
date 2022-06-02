@@ -166,7 +166,8 @@
 	bottom: 0;
     z-index: -1;
 	transform: scale(1.2);
-    filter: blur(13px);
+    filter: blur(13px) brightness(80%);
+	
 }
 
 .backgroundHome {
@@ -230,7 +231,7 @@
 .splashScreen img {
 
 	width: 100px;
-	
+	border-radius: 30px;
 }
 
 .label {
