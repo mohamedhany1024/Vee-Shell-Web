@@ -4,11 +4,13 @@
 
 @keyframes screenOpen {
 	0% {
-		transform: translateX(-100%);
+		transform: translateY(50%);
+		opacity: 0;
 	}
 
 	100% {
 		transform: translateY(0);
+		opacity: 1;
 	}
 }
 
@@ -23,7 +25,7 @@
 }
 
 .titleBar {
-	background-color: #ffffff6b;
+	background-color: rgba(255, 255, 255, 0.411);
 	font-family: sans-serif;
 	font-size: 180%;
 	border-radius: 8px;
@@ -36,7 +38,7 @@
 }
 
 .btn {
-	background-color: #ffffff8a;
+	background-color: rgba(255, 255, 255, 0.411); 
 	border: none;
 	font-size: 4vh;
 	border-radius: 10px;
@@ -46,7 +48,8 @@
 }
 
 .btn:hover {
-	background-color: rgba(255, 255, 255, 0.411);
+	background-color: #ffffff8a;
+
 }
 
 .btn:active {
@@ -54,11 +57,14 @@
 }
 
 .editText {
-	background-color: white;
-	border: none;
-	border-radius: 10px;
-	color: black;
-	transition: all 0.3s ease-im-out;
+	background-color: #c5c5c56c;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    color: white;
+    font-size: 100%;
+    
+    border-bottom: 2px solid rgb(112, 216, 126);
 }
 
 .editText:hover {
@@ -66,13 +72,13 @@
 }
 
 .textBlock {
-	background-color:  #ffffff8a;
+	background-color:  rgba(255, 255, 255, 0.411);
 	border-radius: 10px;
 	margin-bottom: 8px;
 }
 
 .menuOption {
-	background-color: #ffffff8a;
+	background-color: rgba(255, 255, 255, 0.411);
 	border-radius: 10px;
 	justify-content: center;
 	align-items: center;
@@ -81,7 +87,7 @@
 }
 
 .menuOption:hover {
-	background-color: rgba(255, 255, 255, 0.411);
+	background-color: #ffffff8a;
 }
 
 .menuImage {
@@ -93,14 +99,20 @@
 }
 
 .imageBtn {
-	background-color: #ffffff8a;
+	background-color: rgba(255, 255, 255, 0.411);
 	border-radius: 10px;
 	border: none;
 	transition: background-color 0.3s ease-in-out;
 }
 
 .imageBtn:hover {
-	background-color: rgba(255, 255, 255, 0.411);
+	background-color: #ffffff8a;
+}
+
+.gridC {
+	display: grid;
+	justify-content: center;
+	align-items: center;
 }
 
 .grid2 {
@@ -132,15 +144,15 @@
 .dialogueBox {
 	display: none;
 	position: fixed;
-    background-color: #ffffff8a;
+    background-color: rgba(255, 255, 255, 0.411);
     box-shadow: #aaaaaa 0 0 10px;
 	width: 100%;
-	animation: 0.5s ease-out 0s 1 prompt;
+	animation: 0.5s ease 0s 1 prompt;
 	z-index: 3;
 }
 
 .dialogueBtn {
-	background-color:  #ffffff8a;
+	background-color:  rgba(255, 255, 255, 0.411);
     color:black;
     font-size: 150%;
 	border: none;
@@ -148,7 +160,7 @@
 }
 
 .dialogueBtn:hover {
-	background-color: rgba(255, 255, 255, 0.411);
+	background-color: #ffffff8a;
 }
 
 .background {
@@ -187,7 +199,7 @@
 
 .screen {
 	display: none;
-	animation: 0.5s ease-out 0s 1 screenOpen;
+	animation: 0.4s ease 1 normal forwards screenOpen;
 }
 
 .splashScreen {
@@ -235,7 +247,7 @@
 }
 
 .label {
-	background-color:  #ffffff8a;
+	background-color:  rgba(255, 255, 255, 0.411);
 	border-radius: 5px;
 	display: table;
 }

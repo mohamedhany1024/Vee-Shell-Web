@@ -1,4 +1,4 @@
-let promptSound = new Audio("/static/sounds/prompt_generic.mp3");
+let promptSound = new Audio("/static/sounds/prompt.wav");
 document.getElementById("screenRes").innerHTML = ("Screen Resolution: " + screen.width + "X" + screen.height);
 
 

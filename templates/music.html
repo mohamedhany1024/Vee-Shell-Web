@@ -9,12 +9,31 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/music.css') }} ">
     <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
 </head>
-<body>
+<body id="body">
     <div class="splashScreen" id="splashScreen"><img src="{{ url_for('static', filename='images/music.png') }}" alt=""></div>
     <div class="background"></div>
     <div class="screen" id="main">
         <div class="titleBar"><p>Music</p></div>
-        <p class="textBlock">Work In Progress</p>
+        
+    </div>
+    <div class="screen" id="playerPage">
+        <img class="imageBtn" width="30" src="{{ url_for('static', filename='images/btnDown.png') }}" id="shrinkBtn">
+        <div class="gridC">
+            <img width="300px" id="playerCover">
+        </div>
+        <div class="gridC">
+            <p id="mLabel2" class="textBlock"></p>
+        </div>
+        <div class="gridC">
+            <div class="grid3inline">
+                <img src="static/images/rewind_ico.png"  onclick="previousSong()" class="imageBtn">
+                <img src="static/images/pause_ico.png"  onclick="togglePlayer()" id="play2" class="imageBtn">
+                <img src="static/images/forward_ico.png" onclick="nextSong()" class="imageBtn">
+    
+                
+            </div>
+        </div>
+
     </div>
 
 
@@ -24,6 +43,10 @@
             background-image: url('../static/wallpapers/{{ wallpaper }}');
         }
     </style>
+    <script src="{{ url_for('static', filename='js/libs/jquery/jquery.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'js/libs/jsmediatags/jsmediatags-3.9.5-min.js')}}"></script>
     <script src="{{ url_for('static', filename='js/shellUtils.js') }}"></script>
+    
+    <script src="{{ url_for('static', filename='js/music.js') }}"></script>
 </body>
 </html>

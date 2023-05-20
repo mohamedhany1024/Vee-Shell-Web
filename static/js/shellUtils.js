@@ -1,5 +1,5 @@
 let currentScreen = "main";
-
+let bg = document.getElementsByClassName("background");
 function startup() {
 	
 	checkAppLoad();
@@ -51,12 +51,16 @@ function openScreen(screen) {
 
 function openDialogue(dId) {
 	document.getElementById(dId).style.display = "block";
-	document.getElementById(currentScreen).style.filter = ("blur(12px)")
+	document.getElementById(currentScreen).style.filter = ("blur(13px)");
+	document.getElementById(currentScreen).style.filter += ("brightness(80%)");
+	
+	bg[0].style.filter = ("brightness(50%) blur(13px)");
 }
 
 function closeDialogue(dId) {
 	document.getElementById(dId).style.display = "none";
-	document.getElementById(currentScreen).style.filter = ("blur(0)")
+	document.getElementById(currentScreen).style.filter = ("");
+	bg[0].style.filter = ("blur(13px)");
 }
 
 function main() {

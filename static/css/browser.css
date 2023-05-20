@@ -13,11 +13,12 @@
 }
 
 .header {
-  background-color: cornflowerblue;
+  background-color: #ffffff8a;
   /*position: fixed;
   width: 100%;
   height 6%;*/
   width: 100%;
+  
 }
 
 .btnBack {
@@ -64,13 +65,13 @@
   margin-bottom: 60px;
 }
 
-#editText {
+/*#editText {
   background-color: white;
   border-radius: 10px;
   color: black;
   border: none;
   font-size: 5vh;
-}
+}*/
 
 /*#view {
   width: 100%;
@@ -94,10 +95,10 @@ webview {
 
 #goBtn {
   border-radius: 15px;
-  background-color: #00ff0d;
+  background-color: #ffffff8a;
   color: black;
   border: none;
-  font-size: 5vh;
+  font-size: 45%;
 }
 
 .help {
@@ -114,4 +115,12 @@ h5 {
 
 .splashScreen {
     background-color: #0095fe;
+}
+
+#editText1 {
+  font-size: 200%;
+}
+
+#editText {
+  font-size: 45%;
 }

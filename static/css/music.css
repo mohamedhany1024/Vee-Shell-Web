@@ -1,3 +1,44 @@
 .splashScreen {
     background-color: #0051ff;
 }
+
+.audioFile {
+    margin-bottom: 2vh;
+   
+}
+
+.controlBar {
+    background-color: #ffffff8a;
+    border-radius: 15px;
+    right: 0;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    display: none;
+    grid-template-columns: auto auto;
+	grid-gap: 2vh;
+}
+
+#play {
+    width: 50px;
+}
+
+#playerCover {
+    border-radius: 15px;
+    max-width: 150px;
+    min-width: 150px;
+    max-height: 150px;
+    min-height: 150px;
+}
+
+.musicOptions {
+    /*display: inline-block;*/
+    width: 50px;
+}
+
+.grid3inline {
+    display: inline-grid;
+	grid-template-columns: auto auto auto;
+	grid-gap: 2vh;
+}

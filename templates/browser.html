@@ -37,9 +37,9 @@
                     onclick="forward()">
             </div>
             <div class="btnHome">
-                <a href="{{ url_for('browser') }}">
-                    <img src="{{ url_for('static', filename='images/btnHome.png') }}" width="50" id="btnHome">
-                </a>
+                
+                    <img src="{{ url_for('static', filename='images/btnHome.png') }}" width="50" id="btnHome" onclick="home()">
+                
             </div>
 
             <div class="btnHelp">
@@ -47,48 +47,46 @@
             </div>
 
             <div class="addressBar">
-                <input type="text" placeholder="Type web Address." id="editText" onclick="parent.getFocus(this.id)">
+                <input type="text" placeholder="Type web Address." id="editText" onclick="parent.getFocus(this.id)" class="editText">
                 <input type="button" id="goBtn" value="Go." onclick="go()">
             </div>
         </div>
 
         <div class="duck" id="duck">
             <p>
-                <img src="{{ url_for('static', filename='images/ddgo_ico.png') }}" width="100">
+                <img src="{{ url_for('static', filename='images/ddgo_ico_2.png') }}" width="100" style="background-color: #ffffff8a; border-radius: 10px;">
             </p>
 
             <h4>Search With DuckDuckGo.</h4>
             <p>
                 <!--<form action="http://www.duckduckgo.com/" method="get">-->
-                <input type="text" id="editText1" placeholder="Search with DuckDuckGo." name="q" class="my-input"
+                <input type="text" id="editText1" placeholder="Search with DuckDuckGo." name="q" class="editText"
                     onclick="parent.getFocus(this.id)">
                 <button onclick="search()" id="searchBtn"> Go</button>
                 <!--</form>-->
         </div>
 
         <div class="renderer">
-            <iframe src="" frameborder="0" id="web"></iframe>
+            <iframe src="about:blank" frameborder="0" id="web" target = "_top"></iframe>
         </div>
         <style>
             #web {
                 width: 100%;
-                height: 100%;
+                height: 70vh;
                 display: none;
                 position: absolute;
             }
 
 
-            .duck {
-                /*padding-top: 150px;*/
-            }
+           
 
             #searchBtn {
-                background-color: #42e465;
+                background-color: #ffffff8a;
                 border: none;
-                color: white;
+                color: black;
                 border-radius: 5px;
                 font-size: 150%;
-                box-shadow: 0 0 15px #aaaaaa;
+                
             }
 
             p {
@@ -105,13 +103,13 @@
                 font-family: sans-serif;
             }
 
-            #editText1 {
+            /*#editText1 {
                 background-color: white;
                 border: none;
                 box-shadow: 0 0 15px #aaaaaa;
                 border-radius: 5px;
                 font-size: 150%;
-            }
+            }*/
         </style>
 
 
@@ -129,23 +127,58 @@
     <script src="{{ url_for('static', filename='js/shellUtils.js') }}"></script>
 
     <script>
+        
         var web = document.getElementById("web");
-
-
+        let historyPointer = 0;
+        let history = new Array();
+        let historySet = new Set();
+        var duck = document.getElementById("duck");
+        setInterval(()=> {
+            if (!historySet.has(web.src)) {
+                historySet.add(web.src);
+                history.push(web.src);
+                historyPointer = history.length-1;
+            }
+        }, 2000);
         function back() {
-            view.goBack();
+            if (historyPointer-1 >= 0) {
+                historyPointer--;
+                web.src = history[historyPointer];
+                duck.style.display = "none";
+                web.style.display = "block";
+            }
+
+            if (history[historyPointer] == "about:blank") {
+                duck.style.display = "block";
+                web.style.display = "none";
+            }
         }
 
         function forward() {
-            view.goForward();
+            if (historyPointer+1 <= history.length-1) {
+                historyPointer++;
+                web.src = history[historyPointer];
+                duck.style.display = "none";
+                web.style.display = "block";
+            }
+            if (history[historyPointer] == "about:blank") {
+                duck.style.display = "block";
+                web.style.display = "none";
+            }
         }
 
         function go() {
-            var duck = document.getElementById("duck");
+            
             var vaal = document.getElementById("editText").value;
             web.style.display = ("inline-flex");
             web.src = (vaal);
             duck.style.display = ("none");
+        }
+
+        function home() {
+            web.src = "about:blank";
+            web.style.display = "none";
+            duck.style.display = "block";
         }
 
         function getFocus(idd) {
