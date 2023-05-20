@@ -19,8 +19,8 @@ Now That You Have pip installed You'll Need To Install Flask. You can Install It
 ```
 pip3 install flask
 ```
-Now That You Have all Of The Dependencies It's Time To Run Vee Shell. First You'll Need To Navigate To where You've Downloaded The Vee Shell Repository. After That Open the ```Vee-Shell-Web-Experimental``` Folder Now Open This In a terminal Window. After That Execute The Following Command
+Now That You Have all Of The Dependencies It's Time To Run Vee Shell. First You'll Need To Navigate To where You've Downloaded The Vee Shell Repository. After That Open the ```Vee-Shell-Web``` Folder Now Open This In a terminal Window. After That Execute The Following Command
 ```
-flask run
+./startBackend.sh
 ```
 And That's it vee Shell is Now Running Now Open Your Web Browser(firefox Or chromium) And Type In The Adress Bar ```127.0.0.1:5000``` Then Hit Enter. And That's It. Now You're Succesfully Using Vee Shell
