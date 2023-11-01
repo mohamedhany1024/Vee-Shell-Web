@@ -12,339 +12,370 @@
 </head>
 
 <body id="body">
-    <div class="homeWrapper">
-        <div class="backgroundHome" id="backgroundHome"></div>
-        <img src="../static/wallpapers/{{ wallpaper }}" style="display: none;" id="bgImg">
-        <div class="appViewer">
-            <iframe id="appViewer"></iframe>
+    <div class="flexCont">
+        <div class="recentsOverlay" id="recentsOverlay" onclick="toggleRecents()">
+            <div class="gridC" id="noApps">
+                <p class="textBlock">No Recent Apps</p>
+            </div>
+            <div class="grid2" id="recentApps">
+                
+            </div>
+            <div class="gridC">
+                <img src="/static/images/trash_ico.png" width="50px" onclick="clearApps()" class="btn">
+            </div>
         </div>
-        <div id="powerMenu" class="powerOptions" onclick="exitPower()">
-            <img id="powerOff" src="{{ url_for('static', filename='images/power.png') }}" width="120">
-            <p class="powerText">Power Off</p>
-            <a href="http://127.0.0.1:5000"><img id="powerOff"
-                    src="{{ url_for('static', filename='images/restart.png') }}" width="120"></a>
-            <p class="powerText">Restart</p>
-        </div>
-        
-        <div class="appGrid" onclick="toggleApps()">
-            <h1 id="left" onclick="toggleApps()">Apps</h1>
-            <p id="right"><img src="{{ url_for('static', filename='images/btnUp.png') }}" width="20"></p>
 
-        </div>
-        <div class="clock-container" id="clock-container">
-            <p class="clock" id="clock">00:00</p>
-        </div>
-        <div class="menu" id="menu">
-
-
-            <ul>
-
-                <img class="icon" src="{{ url_for('static', filename='images/dialler.png') }}" id="dialler" width="80"
-                    onclick="openApp('dialler')">
-                <p class="label">Dialler</p>
-
-                <img class="icon" src="{{ url_for('static', filename='images/browser.png') }}" id="browser" width="80"
-                    onclick="openApp('browser')">
-                <p class="label">Web Browser</p>
-
-                <img class="icon" src="{{ url_for('static', filename='images/settings.png') }}" width="80"
-                    onclick="openApp('settings')">
-                <p class="label">Settings</p>
-
-
-                <img class="icon" src="{{ url_for('static', filename='images/calculator.png') }}" id="calc" width="80"
-                    onclick="openApp('calc')">
-                <p class="label">Calculator</p>
-                <img class="icon" src="{{ url_for('static', filename='images/music.png') }}" id="music" width="80"
-                    onclick="openApp('music')">
-                <p class="label">Music</p>
-                <img src="{{ url_for('static', filename='images/power.png') }}" width="80" onclick="power()"
-                    id="powerBtn">
-            </ul>
-            <ul id="row2">
-            </ul>
-        </div>
-    </div>
-
-    <style>
-        .backgroundHome {
-            background-image: url('../static/wallpapers/{{ wallpaper }}');
-        }
-    </style>
-    <!--__________________________________vBoard Goes Here_______________________________________-->
-    <!--This HTML Code is Self Independent. It means That You can Copy This Code To the End of Your Web app
-        and Have The default Vee-Shell keyboard and Navigation-bar With no Problems-->
-    <div class="board-warp">
-        <div id="vBoard">
-
-            <div class="numbers" id="hidden">
-                <input type="button" value="0" onclick='v("0")' id="key" class="key">
-                <input type="button" value="1" onclick='v("1")' id="key" class="key">
-                <input type="button" value="2" onclick='v("2")' id="key" class="key">
-                <input type="button" value="3" onclick='v("3")' id="key" class="key">
-                <input type="button" value="4" onclick='v("4")' id="key" class="key">
-                <input type="button" value="5" onclick='v("5")' id="key" class="key">
-                <input type="button" value="6" onclick='v("6")' id="key" class="key">
-                <input type="button" value="7" onclick='v("7")' id="key" class="key">
-                <input type="button" value="8" onclick='v("8")' id="key" class="key">
-                <input type="button" value="9" onclick='v("9")' id="key" class="key">
+        <div class="homeWrapper">
+            <div class="backgroundHome" id="backgroundHome"></div>
+            <img src="../static/wallpapers/{{ wallpaper }}" style="display: none;" id="bgImg">
+            <div class="appContainer" id="appContainer">
+                <!-- <iframe id="appViewer" class="appViewer"></iframe> -->
+            </div>
+            <div id="powerMenu" class="powerOptions" onclick="exitPower()">
+                <img id="powerOff" src="{{ url_for('static', filename='images/power.png') }}" width="120">
+                <p class="powerText">Power Off</p>
+                <a href="http://127.0.0.1:5000"><img id="powerOff"
+                        src="{{ url_for('static', filename='images/restart.png') }}" width="120"></a>
+                <p class="powerText">Restart</p>
             </div>
 
-            <div class="row1" id="hidden1">
-                <input type="button" value="q" onclick='v("q")' id="key" class="key">
-                <input type="button" value="w" onclick='v("w")' id="key" class="key">
-                <input type="button" value="e" onclick='v("e")' id="key" class="key">
-                <input type="button" value="r" onclick='v("r")' id="key" class="key">
-                <input type="button" value="t" onclick='v("t")' id="key" class="key">
-                <input type="button" value="y" onclick='v("y")' id="key" class="key">
-                <input type="button" value="u" onclick='v("u")' id="key" class="key">
-                <input type="button" value="i" onclick='v("i")' id="key" class="key">
-                <input type="button" value="o" onclick='v("o")' id="key" class="key">
-                <input type="button" value="p" onclick='v("p")' id="key" class="key">
-                <input type="button" value="{" onclick='v("{")' id="key" class="key">
-                <input type="button" value="del" onclick="del()" id="key" class="key">
-            </div>
-            <div class="row2" id="hidden2">
-                <input type="button" value="a" onclick='v("a")' id="key" class="key">
-                <input type="button" value="s" onclick='v("s")' id="key" class="key">
-                <input type="button" value="d" onclick='v("d")' id="key" class="key">
-                <input type="button" value="f" onclick='v("f")' id="key" class="key">
-                <input type="button" value="g" onclick='v("g")' id="key" class="key">
-                <input type="button" value="h" onclick='v("h")' id="key" class="key">
-                <input type="button" value="j" onclick='v("j")' id="key" class="key">
-                <input type="button" value="k" onclick='v("k")' id="key" class="key">
-                <input type="button" value="l" onclick='v("l")' id="key" class="key">
-                <input type="button" value=":" onclick='v(":")' id="key" class="key">
-                <input type="button" value="/" onclick='v("/")' id="key" class="key">
+            <div class="appGrid" onclick="toggleApps()">
+                <h1 id="left" onclick="toggleApps()">Apps</h1>
+                <p id="right"><img src="{{ url_for('static', filename='images/btnUp.png') }}" width="20"></p>
 
             </div>
-
-            <div class="row3" id="hidden3">
-                <input type="button" value="Sh" onclick='v("")' id="key" class="key">
-                <input type="button" value="z" onclick='v("z")' id="key" class="key">
-                <input type="button" value="x" onclick='v("x")' id="key" class="key">
-                <input type="button" value="c" onclick='v("c")' id="key" class="key">
-                <input type="button" value="v" onclick='v("v")' id="key" class="key">
-                <input type="button" value="b" onclick='v("b")' id="key" class="key">
-                <input type="button" value="n" onclick='v("n")' class="key" id="key">
-                <input type="button" value="m" onclick='v("m")' class="key" id="key">
-                <input type="button" value="," onclick='v(",")' class="key" id="key">
-                <input type="button" value="." onclick='v(".")' class="key" id="key">
-
-
+            <div class="clock-container" id="clock-container">
+                <p class="clock" id="clock">00:00</p>
             </div>
+            <div class="menu" id="menu">
 
-            <div class="spacebar" id="hidden4">
-                <input type="button" value="Space" onclick='v(" ")' id="spaceBar" class="key" name="spaceBar">
-            </div>
-            <div class="navBar" id="navBar">
+
                 <ul>
-                    <li id="home" onclick="homeScreen()">
-                        <img src="static/images/home_ico.png" width="35vh">
-                    </li>
 
-                    <li id="showVBoard-li">
-                        <img src="static/images/keyboard_ico.png" onclick="showBoard()" id="toggleVBoard" width="35vh">
-                    </li>
+                    <img class="icon" src="{{ url_for('static', filename='images/dialler.png') }}" id="dialler"
+                        width="80" onclick="openApp('dialler')">
+                    <p class="label">Dialler</p>
+
+                    <img class="icon" src="{{ url_for('static', filename='images/browser.png') }}" id="browser"
+                        width="80" onclick="openApp('browser')">
+                    <p class="label">Web Browser</p>
+
+                    <img class="icon" src="{{ url_for('static', filename='images/settings_2.png') }}" width="80"
+                        onclick="openApp('settings')">
+                    <p class="label">Settings</p>
+
+
+                    <img class="icon" src="{{ url_for('static', filename='images/calculator.png') }}" id="calc"
+                        width="80" onclick="openApp('calc')">
+                    <p class="label">Calculator</p>
+                    <img class="icon" src="{{ url_for('static', filename='images/music.png') }}" id="music" width="80"
+                        onclick="openApp('music')">
+                    <p class="label">Music</p>
+                    <img src="{{ url_for('static', filename='images/power.png') }}" width="80" onclick="power()"
+                        id="powerBtn">
                 </ul>
-
+                <ul id="row2">
+                </ul>
             </div>
         </div>
 
         <style>
-            @keyframes slideUP {
-                0% {
-                    transform: translateY(100%);
-                }
-
-                100% {
-                    transform: translateY(0);
-                }
-            }
-
-            #home {
-                text-align: center;
-                color: white;
-                font-size: 4vh;
-                
-            }
-
-            #home_link {
-                font-family: sans-serif;
-                color: white;
-                font-size: 4vh;
-            }
-
-            .navBar {
-                background-color: #646464;
-                height: 10vh;
-                transition: all 0.4s ease-out;
-            }
-
-            #showVBoard-li {
-                float: left;
-                font-size: 4vh;
-            }
-
-            #showVBoard {
-                //background-color: #646464;
-                color: white;
-                /*font-size: 190%;*/
-            }
-
-            .navBar ul {
-                overflow: hidden;
-                list-style-type: none;
-            }
-
-            .navBar li {
-                float: right;
-                width: 20%;
-            }
-
-            #toggleVBoard {
-                background-color: #646464;
-                color: white;
-                font-size: 190%;
-                border-style: none;
-            }
-
-            .board-warp {
-                position: fixed;
-                width: 100%;
-                left: 0;
-                bottom: 0;
-                padding: 0 0;
-                user-select: none;
-                transition: bottom 0.4s;
-                z-index: 3;
-                margin-bottom: 0;
-            }
-
-            #vBoard {
-                text-align: center;
-                background-color: #252525;
-                animation: 0.4s ease-out 0s 1 slideUP;
-
-                margin-top: 0;
-                margin-bottom: 0;
-                transition: all 0.4s ease-out;
-            }
-
-            
-
-            #key {
-                height: 45px;
-                width: 6.333333%;
-                max-width: 90px;
-                font-size: 1.05rem;
-                -webkit-tap-highlight-color: transparent;
-                background-color: #505050;
-                color: #ffffff;
-                border-radius: 9px;
-                border: none;
-                margin: 0.3vw;
-                outline: none;
-                cursor: pointer;
-                transition: all 0.4s ease-out;
-            }
-
-            #key:hover {
-                background-color: #00c478;
-            }
-
-            
-
-            #spaceBar {
-                height: 45px;
-                width: 30%;
-                
-                font-size: 1.05rem;
-                -webkit-tap-highlight-color: transparent;
-                background-color: #505050;
-                color: #ffffff;
-                border-radius: 9px;
-                border: none;
-                margin: 0.3vw;
-                outline: none;
-                cursor: pointer;
-                transition: all 0.4s ease-out;
-            }
-
-            .numbers {
-                background-color: #161616;
-            }
-
-            .row2 {
-                /*padding-right: 7%;*/
-            }
-
-            .row3 {
-                /*padding-right: 5%;*/
-            }
-
-            #searchBtn {
-                background-color: #00f829;
-                border-style: none;
-                color: white;
-                border-top-right-radius: 7px;
-                border-bottom-right-radius: 7px;
-                font-size: 100%;
+            .backgroundHome {
+                background-image: url('../static/wallpapers/{{ wallpaper }}');
             }
         </style>
+        <!--__________________________________vBoard Goes Here_______________________________________-->
+        <!--This HTML Code is Self Independent. It means That You can Copy This Code To the End of Your Web app
+        and Have The default Vee-Shell keyboard and Navigation-bar With no Problems-->
+        <div class="board-warp">
+            <div id="vBoard">
 
-        <script>
-            /*when Any Of the buttons is Pressed any input Field that has an id of editText.
-           will Recieve the value of the button Which the user Pressed*/
-            var focusedElement = null
-            let appContainer = document.getElementById("appViewer");
-            function homeScreen() {
-                document.getElementById("appViewer").style.display = "none";
-            }
-            var press = new Audio("../static/sounds/key_press.wav");
-            function v(val) {
-                appContainer.contentWindow.document.getElementById(focusedElement).value += val;
-                
-                press.play();
-            }
-            var dele = new Audio('../static/sounds/key_del.wav');
-            function del() {
-                let tArea = appContainer.contentWindow.document.getElementById(focusedElement);
-                tArea.value = tArea.value.substring(0, tArea.value.length - 1);
-                
-                dele.play();
-            }
+                <div class="numbers" id="hidden">
+                    <input type="button" value="0" onclick='v("0")' id="key" class="key">
+                    <input type="button" value="1" onclick='v("1")' id="key" class="key">
+                    <input type="button" value="2" onclick='v("2")' id="key" class="key">
+                    <input type="button" value="3" onclick='v("3")' id="key" class="key">
+                    <input type="button" value="4" onclick='v("4")' id="key" class="key">
+                    <input type="button" value="5" onclick='v("5")' id="key" class="key">
+                    <input type="button" value="6" onclick='v("6")' id="key" class="key">
+                    <input type="button" value="7" onclick='v("7")' id="key" class="key">
+                    <input type="button" value="8" onclick='v("8")' id="key" class="key">
+                    <input type="button" value="9" onclick='v("9")' id="key" class="key">
+                </div>
 
-            function getFocus(idd) {
-                focusedElement = idd;
-                console.log(focusedElement + " is getting Focus");
-            }
+                <div class="row1" id="hidden1">
+                    <input type="button" value="q" onclick='v("q")' id="key" class="key">
+                    <input type="button" value="w" onclick='v("w")' id="key" class="key">
+                    <input type="button" value="e" onclick='v("e")' id="key" class="key">
+                    <input type="button" value="r" onclick='v("r")' id="key" class="key">
+                    <input type="button" value="t" onclick='v("t")' id="key" class="key">
+                    <input type="button" value="y" onclick='v("y")' id="key" class="key">
+                    <input type="button" value="u" onclick='v("u")' id="key" class="key">
+                    <input type="button" value="i" onclick='v("i")' id="key" class="key">
+                    <input type="button" value="o" onclick='v("o")' id="key" class="key">
+                    <input type="button" value="p" onclick='v("p")' id="key" class="key">
+                    <input type="button" value="{" onclick='v("{")' id="key" class="key">
+                    <input type="button" value="del" onclick="del()" id="key" class="key">
+                </div>
+                <div class="row2" id="hidden2">
+                    <input type="button" value="a" onclick='v("a")' id="key" class="key">
+                    <input type="button" value="s" onclick='v("s")' id="key" class="key">
+                    <input type="button" value="d" onclick='v("d")' id="key" class="key">
+                    <input type="button" value="f" onclick='v("f")' id="key" class="key">
+                    <input type="button" value="g" onclick='v("g")' id="key" class="key">
+                    <input type="button" value="h" onclick='v("h")' id="key" class="key">
+                    <input type="button" value="j" onclick='v("j")' id="key" class="key">
+                    <input type="button" value="k" onclick='v("k")' id="key" class="key">
+                    <input type="button" value="l" onclick='v("l")' id="key" class="key">
+                    <input type="button" value=":" onclick='v(":")' id="key" class="key">
+                    <input type="button" value="/" onclick='v("/")' id="key" class="key">
 
-            function showBoard() {
-                var kb = document.getElementById("hidden");
-                var kb1 = document.getElementById("hidden1");
-                var kb2 = document.getElementById("hidden2");
-                var kb3 = document.getElementById("hidden3");
-                var kb4 = document.getElementById("hidden4");
+                </div>
 
-                if (kb.style.display === "none") {
-                    kb.style.display = "block";
-                    kb1.style.display = "block";
-                    kb2.style.display = "block";
-                    kb3.style.display = "block";
-                    kb4.style.display = "block";
-                } else {
-                    kb.style.display = "none";
-                    kb1.style.display = "none";
-                    kb2.style.display = "none";
-                    kb3.style.display = "none";
-                    kb4.style.display = "none";
+                <div class="row3" id="hidden3">
+                    <input type="button" value="Sh" onclick='v("")' id="key" class="key">
+                    <input type="button" value="z" onclick='v("z")' id="key" class="key">
+                    <input type="button" value="x" onclick='v("x")' id="key" class="key">
+                    <input type="button" value="c" onclick='v("c")' id="key" class="key">
+                    <input type="button" value="v" onclick='v("v")' id="key" class="key">
+                    <input type="button" value="b" onclick='v("b")' id="key" class="key">
+                    <input type="button" value="n" onclick='v("n")' class="key" id="key">
+                    <input type="button" value="m" onclick='v("m")' class="key" id="key">
+                    <input type="button" value="," onclick='v(",")' class="key" id="key">
+                    <input type="button" value="." onclick='v(".")' class="key" id="key">
+
+
+                </div>
+
+                <div class="spacebar" id="hidden4">
+                    <input type="button" value="Space" onclick='v(" ")' id="spaceBar" class="key" name="spaceBar">
+                </div>
+                <div class="flexNav" id="navBar">
+                        
+                    <img src="static/images/keyboard_ico.png" onclick="showBoard()" id="toggleVBoard" width="35vh">
+                    <img src="static/images/home_ico.png" width="35vh" onclick="homeScreen()" id="home">
+                    <img src="{{ url_for('static', filename='images/recents.png') }}" width="35vh" id="recents" onclick="toggleRecents()">
+                        
+            
+
+                </div>
+            </div>
+
+            <style>
+                @keyframes slideUP {
+                    0% {
+                        transform: translateY(100%);
+                    }
+
+                    100% {
+                        transform: translateY(0);
+                    }
                 }
 
-            }
+                #home {
+                    text-align: center;
+                    color: white;
+                    /* font-size: 4vh; */
+                    /* width: 3vh; */
 
-        </script>
+                }
 
+                #home_link {
+                    font-family: sans-serif;
+                    color: white;
+                    font-size: 4vh;
+                }
+
+                .navBar {
+                    margin: 0;
+                    background-color: #646464;
+                    height: 10vh;
+                    transition: all 0.4s ease-out;
+                    /*max-height: 40px;
+                min-height: 25px;*/
+                }
+
+                #showVBoard-li {
+                    float: left;
+                    font-size: 4vh;
+                }
+
+                #showVBoard {
+                    /* background-color: #646464; */
+                    color: white;
+                    /*font-size: 190%;*/
+                    /* width: 3vh; */
+                }
+
+                .navBar ul {
+                    margin-bottom: 0;
+                    overflow: hidden;
+                    list-style-type: none;
+                }
+
+                .navBar li {
+                    float: right;
+                    width: 20%;
+                    font-size: 4vh;
+                }
+
+                #toggleVBoard {
+                    background-color: #646464;
+                    color: white;
+                    font-size: 190%;
+                    border-style: none;
+                }
+
+                .board-warp {
+                    position: fixed;
+                    width: 100%;
+                    left: 0;
+                    bottom: 0;
+                    padding: 0 0;
+                    user-select: none;
+                    transition: bottom 0.4s;
+                    z-index: 3;
+                    margin-bottom: 0;
+                }
+
+                #vBoard {
+                    text-align: center;
+                    background-color: #252525;
+                    animation: 0.4s ease-out 0s 1 slideUP;
+
+                    margin-top: 0;
+                    margin-bottom: 0;
+                    transition: all 0.4s ease-out;
+                }
+
+
+
+                #key {
+                    height: 45px;
+                    width: 6.333333%;
+                    max-width: 90px;
+                    font-size: 1.05rem;
+                    -webkit-tap-highlight-color: transparent;
+                    background-color: #505050;
+                    color: #ffffff;
+                    border-radius: 9px;
+                    border: none;
+                    margin: 0.3vw;
+                    outline: none;
+                    cursor: pointer;
+                    transition: all 0.4s ease-out;
+                }
+
+                #key:hover {
+                    background-color: #00c478;
+                }
+
+
+
+                #spaceBar {
+                    height: 45px;
+                    width: 30%;
+
+                    font-size: 1.05rem;
+                    -webkit-tap-highlight-color: transparent;
+                    background-color: #505050;
+                    color: #ffffff;
+                    border-radius: 9px;
+                    border: none;
+                    margin: 0.3vw;
+                    outline: none;
+                    cursor: pointer;
+                    transition: all 0.4s ease-out;
+                }
+
+                .numbers {
+                    background-color: #161616;
+                }
+
+                .row2 {
+                    /*padding-right: 7%;*/
+                }
+
+                .row3 {
+                    /*padding-right: 5%;*/
+                }
+
+                #searchBtn {
+                    background-color: #00f829;
+                    border-style: none;
+                    color: white;
+                    border-top-right-radius: 7px;
+                    border-bottom-right-radius: 7px;
+                    font-size: 100%;
+                }
+            </style>
+
+            <script>
+                /*when Any Of the buttons is Pressed any input Field that has an id of editText.
+               will Recieve the value of the button Which the user Pressed*/
+                var focusedElement = null
+                let appViewers = document.getElementsByClassName("appViewer");
+                let currentApp
+                let appContainer = document.getElementById("appContainer");
+                function homeScreen() {
+                    //console.log(appViewers);
+                    for (i = 0; i< appViewers.length; i++) {
+                        appViewers[i].style.display = "none";
+                    }
+                    //document.getElementById("appViewer").style.display = "none";
+                    appContainer.style.display = "none";
+                }
+                var press = new Audio("../static/sounds/key_press.wav");
+                function v(val) {
+                    currentApp = document.getElementById(getCurrentAppID());
+                    currentApp.contentWindow.document.getElementById(focusedElement).value += val;
+
+                    press.play();
+                }
+                var dele = new Audio('../static/sounds/key_del.wav');
+                function del() {
+                    currentApp = document.getElementById(getCurrentAppID());
+                    let tArea = currentApp.contentWindow.document.getElementById(focusedElement);
+                    tArea.value = tArea.value.substring(0, tArea.value.length - 1);
+
+                    dele.play();
+                }
+
+                function getFocus(idd) {
+                    focusedElement = idd;
+                    console.log(idd);
+                    currentApp = document.getElementById(getCurrentAppID());
+                    currentApp.contentWindow.document.getElementById(focusedElement).scrollIntoView();
+                    //document.getElementById(idd).scrollIntoView();
+                    console.log(focusedElement + " is getting Focus");
+                }
+
+                function showBoard() {
+                    var kb = document.getElementById("hidden");
+                    var kb1 = document.getElementById("hidden1");
+                    var kb2 = document.getElementById("hidden2");
+                    var kb3 = document.getElementById("hidden3");
+                    var kb4 = document.getElementById("hidden4");
+
+                    if (kb.style.display === "none") {
+                        kb.style.display = "block";
+                        kb1.style.display = "block";
+                        kb2.style.display = "block";
+                        kb3.style.display = "block";
+                        kb4.style.display = "block";
+                    } else {
+                        kb.style.display = "none";
+                        kb1.style.display = "none";
+                        kb2.style.display = "none";
+                        kb3.style.display = "none";
+                        kb4.style.display = "none";
+                    }
+
+                }
+
+            </script>
+
+        </div>
     </div>
     <script src="{{ url_for('static', filename='js/libs/colorTheif/color-theif.umd.js') }}"></script>
     <script src="{{ url_for('static', filename='js/home.js') }}"></script>

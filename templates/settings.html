@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
 </head>
 <body>
-	<div class="splashScreen" id="splashScreen"><img src="{{ url_for('static', filename='images/settings.png') }}" width="70"></div>
+	<div class="splashScreen" id="splashScreen"><img src="{{ url_for('static', filename='images/settings_2.png') }}" width="70"></div>
     <div class="background" id="bag"></div>
     <div class="settings">
         <div class="dialogueBox" id="prompt">
@@ -46,18 +46,23 @@
             </div>
             <h3 class="textBlock">Wallpapers</h3>
             <div class="textBlock"><p>Current Wallpaper: {{ wallpaper }}</p></div>
-            <a href="http://127.0.0.1:5000/wall2"><img src="{{ url_for('static', filename='wallpapers/wall2.jpg') }}" height="150" width="90" id="wall2"></a>
-            
-                <a href="http://127.0.0.1:5000/settings/pinkFlower"><img src="{{ url_for('static', filename='wallpapers/pinkFlower.jpg') }}" height="150" width="90" id="pinkFlower"></a>
-                <a href="http://127.0.0.1:5000/settings/risingSun"><img src="{{ url_for('static', filename='wallpapers/risingSun.jpg') }}" height="150" width="90" id="risingSun"></a>
-                <a href="http://127.0.0.1:5000/settings/droplets"><img src="{{ url_for('static', filename='wallpapers/droplets.jpg') }}" height="150" width="90"></a>
-                <a href="http://127.0.0.1:5000/settings/dragonTeath"><img src="{{ url_for('static', filename='wallpapers/dragonTeath.jpg') }}" height="150" width="90"></a>
-                <a href="http://127.0.0.1:5000/settings/wetLeaves"><img src="{{ url_for('static', filename='wallpapers/wetLeaves.jpg') }}" height="150" width="90"></a>
-                <a href="http://127.0.0.1:5000/settings/Clouds"><img src="{{ url_for('static', filename='wallpapers/Clouds.jpg') }}" height="150" width="90"></a>
-                <a href="http://127.0.0.1:5000/settings/woodenPlanks"><img src="{{ url_for('static', filename='wallpapers/woodenPlanks.jpg') }}" height="150" width="90"></a>
-                <a href="http://127.0.0.1:5000/settings/ocean"><img src="{{ url_for('static', filename='wallpapers/ocean.jpg') }}" height="150" width="90"></a>
-                <a href="http://127.0.0.1:5000/settings/auroraBy(johnyGoerend)"><img src="{{ url_for('static', filename='wallpapers/auroraBy(johnyGoerend).jpg') }}" height="150" width="90"></a>
-
+                <div class="wallCont">
+                    <a href="http://127.0.0.1:5000/settings/mariGold"><img src="{{ url_for('static', filename='wallpapers/mariGold.jpg') }}" height="150" width="90" id="mariGold"></a>
+                    <a href="http://127.0.0.1:5000/settings/aurora"><img src="{{ url_for('static', filename='wallpapers/aurora.jpg') }}" height="150" width="90" id="aurora"></a>
+                    <a href="http://127.0.0.1:5000/settings/yellowElder"><img src="{{ url_for('static', filename='wallpapers/yellowElder.jpg') }}" height="150" width="90" id="yellowElder"></a>
+                    <a href="http://127.0.0.1:5000/settings/crazyLeaflets"><img src="{{ url_for('static', filename='wallpapers/crazyLeaflets.jpg') }}" height="150" width="90" id="crazyLeaflets"></a>
+                    <a href="http://127.0.0.1:5000/settings/flowerPit"><img src="{{ url_for('static', filename='wallpapers/flowerPit.jpg') }}" height="150" width="90" id="flowerPit"></a>
+                    <a href="http://127.0.0.1:5000/settings/goldenEvening"><img src="{{ url_for('static', filename='wallpapers/goldenEvening.jpg') }}" height="150" width="90" id="goldenEvening"></a>
+                    <a href="http://127.0.0.1:5000/settings/pinkFlower"><img src="{{ url_for('static', filename='wallpapers/pinkFlower.jpg') }}" height="150" width="90" id="pinkFlower"></a>
+                    <a href="http://127.0.0.1:5000/settings/risingSun"><img src="{{ url_for('static', filename='wallpapers/risingSun.jpg') }}" height="150" width="90" id="risingSun"></a>
+                    <a href="http://127.0.0.1:5000/settings/droplets"><img src="{{ url_for('static', filename='wallpapers/droplets.jpg') }}" height="150" width="90"></a>
+                    <a href="http://127.0.0.1:5000/settings/dragonTeath"><img src="{{ url_for('static', filename='wallpapers/dragonTeath.jpg') }}" height="150" width="90"></a>
+                    <a href="http://127.0.0.1:5000/settings/wetLeaves"><img src="{{ url_for('static', filename='wallpapers/wetLeaves.jpg') }}" height="150" width="90"></a>
+                    <a href="http://127.0.0.1:5000/settings/Clouds"><img src="{{ url_for('static', filename='wallpapers/Clouds.jpg') }}" height="150" width="90"></a>
+                    <a href="http://127.0.0.1:5000/settings/woodenPlanks"><img src="{{ url_for('static', filename='wallpapers/woodenPlanks.jpg') }}" height="150" width="90"></a>
+                    <a href="http://127.0.0.1:5000/settings/ocean"><img src="{{ url_for('static', filename='wallpapers/ocean.jpg') }}" height="150" width="90"></a>
+                
+                </div>
         </div>
         <div class="screen" id="about">
             <div class="titleBar">
@@ -65,7 +70,7 @@
                 <p>About</p>
             </div>
             <div class="textBlock">
-                <p>Vee Shell Version: 0.86 Alpha</p>
+                <p>Vee Shell Version: 0.87 Alpha</p>
                 <p id="screenRes">screen resolution</p>
                 <p id="ram">RAM: {{ memGig }}GB</p>
                 <p id="cpu">CPU {{ cpu }}</p>
@@ -76,23 +81,34 @@
             <div class="titleBar">
                 <p>Settings</p>
             </div>
-
-            <div class="menuOption" onclick="openScreen('wallpaper')">
+            <p class="label">Personalization</p>
+            
+            <div class="menuOptionTop" onclick="openScreen('wallpaper')">
                 <img src="{{ url_for('static', filename='images/wall_ico.png') }}" width="30" class="menuImage">
                 <p class="menuLabel">Wallpaper</p>
             </div>
             
-            <div class="menuOption">
+            <div class="menuOptionMiddle">
                 <img src="{{ url_for('static', filename='images/font_ico.png') }}" width="30" class="menuImage">
                 <p class="menuLabel">Fonts</p>
             </div>
-            
-            <div class="menuOption" onclick="openScreen('storage')">
+
+            <div class="menuOptionMiddle">
+                <img src="{{ url_for('static', filename='images/theme_ico_2.png') }}" width="30" class="menuImage">
+                <p class="menuLabel">Style</p>
+            </div>
+
+            <div class="menuOptionBottom">
+                <img src="{{ url_for('static', filename='images/color_ico_2.png') }}" width="30" class="menuImage">
+                <p class="menuLabel">Accent Color</p>
+            </div>
+            <p class="label">System</p>
+            <div class="menuOptionTop" onclick="openScreen('storage')">
                 <img src="{{ url_for('static', filename='images/storage_ico.png') }}" width="30" class="menuImage">
                 <p class="menuLabel">Storage</p>
             </div>
             
-            <div class="menuOption" onclick="openScreen('about')">
+            <div class="menuOptionBottom" onclick="openScreen('about')">
                 <img src="{{ url_for('static', filename='images/about_ico.png') }}" width="30" class="menuImage">
                 <p class="menuLabel">About</p>
             </div>

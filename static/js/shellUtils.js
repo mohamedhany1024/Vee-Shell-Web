@@ -13,7 +13,7 @@ function checkAppLoad() {
 	if (document.readyState === 'complete') {
 		
 		console.log("appFullyLoaded");
-		parent.showAppViewer();
+		parent.showAppViewer(parent.getCurrentAppID());
 		let splashColor = parent.getAccentColor();
 		splashColor[0]*=(17/20);
 		splashColor[1]*=(17/20);
@@ -46,7 +46,7 @@ function openScreen(screen) {
 			}
 		}
 		document.getElementById(screenId).style.display = "block";
-	}, 400)
+	}, 100)
 }
 
 function openDialogue(dId) {

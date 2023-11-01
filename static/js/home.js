@@ -5,6 +5,9 @@ const colorThief = new ColorThief();
 const img = document.getElementById("bgImg");
 let dominantColor;
 let colorFetched = false;
+let opennedApps = new Set();
+
+let currentAppView;
 let r = 0, g = 0, b = 0;
 if (img.complete) {
     dominantColor = colorThief.getColor(img);
@@ -96,15 +99,49 @@ function exitPower() {
     background.style.filter = ("blur(0)");
 }
 let appViewer = document.getElementById("appViewer");
+let appCont = document.getElementById("appContainer");
 function openApp(appName) {
 
-    appViewer.src = appName;
+    
+    if (!opennedApps.has(appName)) {
+        //appCont.innerHTML += `<iframe class="appViewer" id="app-${appName}"></iframe>`;
+        appCont.insertAdjacentHTML("afterbegin", `<iframe class="appViewer" id="app-${appName}"></iframe>`);
+        //viewers.push(`app-${appName}`);
+        currentAppView = `app-${appName}`;
+        document.getElementById(`app-${appName}`).src = "/" + appName;
+        //showAppViewer(`app-${appName}`);
+    } else {
+        showAppViewer(`app-${appName}`);
+    }
+    
+    opennedApps.add(appName);
 
 
 }
 
-function showAppViewer() {
-    appViewer.style.display = "block";
+function clearApps() {
+    opennedApps.clear();
+    appCont.innerHTML = "";
+    appCont.style.display = "none";
+}
+
+function getCurrentAppID() {
+    //return viewers[viewers.length - 1];
+    return currentAppView;
+}
+
+function showAppViewer(appViewerID) {
+
+    let appViewers = document.getElementsByClassName("appViewer");
+
+    for(i = 0; i< appViewers.length; i++) {
+        appViewers[i].style.display = "none";
+    }
+    document.getElementById(appViewerID).style.display = "block";
+
+    document.getElementById("appContainer").style.display = "block";
+    //appViewer.style.transform = "scale(1)";
+    
 }
 
 let appsState = 1;
@@ -139,6 +176,52 @@ function toggleApps() {
             apps.style.display = "none";
             clockContainer.classList.toggle("clock-container--opened");
         }, 400);
+    }
+}
+
+let recentsOverlay = document.getElementById("recentsOverlay");
+let recents = document.getElementById("recentApps");
+let noApps = document.getElementById("noApps");
+function showRecents() {
+    recents.innerHTML = "";
+    
+    if (opennedApps.size == 0) {
+        //document.getElementById("recentsOverlay").insertAdjacentHTML("afterbegin", "<div class='' id='noApps'><p class='label'>No Recent Apps.</p></div>");
+        document.getElementById("noApps").style.display = "block";
+    } else {
+        document.getElementById("noApps").style.display = "none";
+    }
+
+    opennedApps.forEach((val)=> {
+        recents.innerHTML+= `<div class="btn" onclick="openApp('${val}')"><p>${val}</p></div>`;
+    })
+
+
+    
+    recentsOverlay.style.display = "block";
+    setTimeout(()=> {
+        recentsOverlay.style.opacity = "1";
+        recentsOverlay.style.backdropFilter = "blur(12px)";
+    }, 10);
+}
+
+function hideRecents() {
+    recentsOverlay.style.opacity = "0";
+    
+    setTimeout(()=> {
+        recentsOverlay.style.display = "none";
+        recentsOverlay.style.backdropFilter = "";
+    }, 400);
+}
+
+let recentsStatus = 0;
+function toggleRecents() {
+    if (recentsStatus == 0) {
+        showRecents();
+        recentsStatus = 1;
+    } else {
+        hideRecents();
+        recentsStatus = 0;
     }
 }
 

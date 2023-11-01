@@ -4,7 +4,8 @@
 
 .audioFile {
     margin-bottom: 2vh;
-   
+    overflow: hidden;
+
 }
 
 .controlBar {
@@ -30,6 +31,7 @@
     min-width: 150px;
     max-height: 150px;
     min-height: 150px;
+    object-fit: cover;
 }
 
 .musicOptions {
@@ -41,4 +43,59 @@
     display: inline-grid;
 	grid-template-columns: auto auto auto;
 	grid-gap: 2vh;
+}
+
+.seek {
+    width: 30%;
+    margin-inline: 35%;
+    /* position: absolute; */
+    /* left: 50%; */
+}
+
+#timeIndicators p {
+    /* margin-inline: 20%; */
+
+}
+
+.timeCont {
+    display: flex;
+    gap: 22vw;
+    justify-content: center;
+}
+
+#mLabel2 {
+    overflow: hidden;
+}
+
+.whiteText {
+    padding: 15px;
+    font-size: 150%;
+    margin-bottom: 15px;
+    color: white;
+    transition: all 0.4s ease-out;
+    overflow: hidden;
+}
+
+.whiteText:hover {
+    background-color: rgba(255, 255, 255, 0.411);
+    border-radius: var(--ui-roundness);
+    color: black;
+}
+
+#controlBg {
+
+    border-radius: 15px;
+    right: 0;
+    
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    display: grid;
+    z-index: -1;
+    width: 100%;
+    height: 2rem;
+    
+    filter: blur(15px);
+    object-fit: cover;
+
 }

@@ -24,11 +24,20 @@
         <div class="gridC">
             <p id="mLabel2" class="textBlock"></p>
         </div>
+        <!-- <div class="gridC"> -->
+            <input class="seek" type="range" min="0" max="100" value="0" id="seekBar">
+            <div class="timeCont">
+                
+                    <p id="currentTime" class="label"></p>
+                    <p id="totalTime" class="label"></p>
+                
+            </div>
+        <!-- </div> -->
         <div class="gridC">
             <div class="grid3inline">
-                <img src="static/images/rewind_ico.png"  onclick="previousSong()" class="imageBtn">
-                <img src="static/images/pause_ico.png"  onclick="togglePlayer()" id="play2" class="imageBtn">
-                <img src="static/images/forward_ico.png" onclick="nextSong()" class="imageBtn">
+                <img src="static/images/rewind_ico_2.png"  onclick="previousSong()" class="imageBtn">
+                <img src="static/images/pause_ico_2.png"  onclick="togglePlayer()" id="play2" class="imageBtn">
+                <img src="static/images/forward_ico_2.png" onclick="nextSong()" class="imageBtn">
     
                 
             </div>
@@ -45,6 +54,7 @@
     </style>
     <script src="{{ url_for('static', filename='js/libs/jquery/jquery.js') }}"></script>
     <script src="{{ url_for('static', filename = 'js/libs/jsmediatags/jsmediatags-3.9.5-min.js')}}"></script>
+    <script src="{{ url_for('static', filename = 'js/libs/colorTheif/color-theif.umd.js')}}"></script>
     <script src="{{ url_for('static', filename='js/shellUtils.js') }}"></script>
     
     <script src="{{ url_for('static', filename='js/music.js') }}"></script>

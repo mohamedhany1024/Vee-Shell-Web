@@ -12,7 +12,7 @@
     }
 }
 
-.background {
+/*.background {
     background-image: url('../wallpapers/wall2.jpeg');
     position: fixed;
     background-repeat: no-repeat;
@@ -21,20 +21,21 @@
     height: 100%;
     z-index: -1;
     filter: blur(10px);
-}
+}*/
 
 
 .titleBar p {
     color: black;
-    //display: inline;
-    padding: 8px;
-    font-family: sans-serif;
-    //float: left;
+    margin: 0;
+    /*display: inline;*/
+    /*padding: 8px;*/
+    /*font-family: sans-serif;*/
+    /*float: left;*/
 }
 
 .titleBar img {
-    //float: left;
-    //height: auto;
+    /*float: left;
+    height: auto;*/
 }
 
 .titleBar {
@@ -81,3 +82,17 @@
 .splashScreen {
     background-color: #ff0000;
 }
+
+.wallCont {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.wallCont img {
+    border-radius: 10px;
+    object-fit: cover;
+    aspect-ratio: 1;
+}
+

@@ -1,3 +1,18 @@
+:root {
+	--shadow-color: #aaaaaa;
+	--main-bg-color: rgba(255, 255, 255, 0.411);
+	--slider-knob-color: rgb(255, 255, 255);
+	--slider-color: rgb(255, 255, 255);
+	--slider-knob-shadow: rgb(46, 46, 46);
+	--app-bg-brightness: 80%;
+	--app-bg-blur: 13px;
+	--font-color: rgb(255, 255, 255);
+	--main-padding: 8px;
+	--title-padding: 20px;
+	--ui-roundness: 10px;
+	--knob-roundness: 100px;
+}
+
 * {
 	font-family: sans-serif;
 }
@@ -28,13 +43,13 @@
 	background-color: rgba(255, 255, 255, 0.411);
 	font-family: sans-serif;
 	font-size: 180%;
-	border-radius: 8px;
+	border-radius: var(--ui-roundness);
 	border: none;
 }
 
 .titleBar p {
 	
-	padding: 8px;
+	padding: var(--title-padding);
 }
 
 .btn {
@@ -73,29 +88,65 @@
 
 .textBlock {
 	background-color:  rgba(255, 255, 255, 0.411);
+	padding: var(--main-padding);
 	border-radius: 10px;
 	margin-bottom: 8px;
+}
+
+.menuOptionTop {
+	background-color: rgba(255, 255, 255, 0.411);
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	/*justify-content: center;*/
+	align-items: center;
+	transition: background-color 0.3s ease-in-out;
+	
+	display: flex;
+}
+
+.menuOptionBottom {
+	background-color: rgba(255, 255, 255, 0.411);
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	/*justify-content: center;*/
+	align-items: center;
+	transition: background-color 0.3s ease-in-out;
+	
+	display: flex;
 }
 
 .menuOption {
 	background-color: rgba(255, 255, 255, 0.411);
 	border-radius: 10px;
-	justify-content: center;
+	/*justify-content: center;*/
 	align-items: center;
 	transition: background-color 0.3s ease-in-out;
-	margin-bottom: 8px;
+	
+	display: flex;
 }
+
 
 .menuOption:hover {
 	background-color: #ffffff8a;
 }
 
+.menuOptionMiddle {
+	background-color: rgba(255, 255, 255, 0.411);
+	
+	/*justify-content: center;*/
+	align-items: center;
+	transition: background-color 0.3s ease-in-out;
+	
+	display: flex;
+}
+
 .menuImage {
-	padding-left: 10px;
+	/*padding-left: 10px;*/
+	margin-inline: 10px;
 }
 
 .menuLabel {
-	display: inline-flex;
+	/*display: inline-flex;*/
 }
 
 .imageBtn {
@@ -146,6 +197,7 @@
 	position: fixed;
     background-color: rgba(255, 255, 255, 0.411);
     box-shadow: #aaaaaa 0 0 10px;
+	padding: var(--main-padding);
 	width: 100%;
 	animation: 0.5s ease 0s 1 prompt;
 	z-index: 3;
@@ -164,7 +216,7 @@
 }
 
 .background {
-	background-image: url('../wallpapers/wall2.jpg');
+	background-image: url('../wallpapers/yellowElder.jpg');
 	
     position: fixed;
     background-repeat: no-repeat;
@@ -178,12 +230,23 @@
 	bottom: 0;
     z-index: -1;
 	transform: scale(1.2);
-    filter: blur(13px) brightness(80%);
+    filter: blur(13px) brightness(70%);
 	
 }
 
+.divider {
+	display: flex;
+	border: none;
+	border-top: 3px solid rgb(255, 0, 0);
+}
+
+.infoSeperator {
+	display: inline-flex;
+	color: var(--font-color);
+}
+
 .backgroundHome {
-	background-image: url('../wallpapers/wall2.jpg');
+	background-image: url('../wallpapers/yellowElder.jpg');
     position: fixed;
     background-repeat: no-repeat;
 	background-size: cover;
@@ -250,4 +313,72 @@
 	background-color:  rgba(255, 255, 255, 0.411);
 	border-radius: 5px;
 	display: table;
+	padding: var(--main-padding);
 }
+
+.seek {
+	-webkit-appearance: none;  /* Override default CSS styles */
+	appearance: none;
+	width: 100%; /* Full-width */
+	height: 10px; /* Specified height */
+	border-radius: 15px;
+	background: #d3d3d3; /* Grey background */
+	outline: none; /* Remove outline */
+	opacity: 1; /* Set transparency (for mouse-over effects on hover) */
+	-webkit-transition: .2s; /* 0.2 seconds transition on hover */
+	transition: opacity .2s;
+	/* width: 80%; */
+}
+
+.seek::-webkit-slider-thumb {
+	-webkit-appearance: none; /* Override default look */
+  	appearance: none;
+  	width: 15px; /* Set a specific slider handle width */
+  	height: 15px; /* Slider handle height */
+  	/* background: #04AA6D; */
+  	cursor: pointer; /* Cursor on hover */
+	background-color: var(--slider-knob-color);
+	border-radius: 100px;
+	box-shadow: 0 0 12px var(--slider-knob-shadow);
+	transition: width 0.2s ease-out;
+}
+
+
+.seek::-webkit-slider-thumb:hover {
+	width: 20px;
+}
+
+.seek::-webkit-slider-runnable-track {
+	-webkit-appearance: none; /* Override default look */
+  	appearance: none;
+  	/* width: 25px; Set a specific slider handle width */
+  	/* height: 25px; Slider handle height */
+  	background-color: var(--slider-color); /* Green background */
+	border-radius: 15px;
+  	cursor: pointer; /* Cursor on hover */
+}
+
+.seek::-moz-range-thumb {
+	border: none;
+	background-color: var(--slider-knob-color);
+	border-radius: 100px;
+	box-shadow: 0 0 12px var(--slider-knob-shadow);
+	transition: width 0.2s ease-out;
+}
+
+.seek::-moz-range-thumb:hover {
+	width: 20px;
+	
+}
+
+.seek::-moz-range-thumb:active {
+	width: 20px;
+	
+}
+
+.seek::-moz-range-track {
+	background-color: var(--slider-color);
+	border-radius: 15px;
+	/* width: 80%; */
+}
+

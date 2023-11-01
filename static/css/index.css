@@ -19,3 +19,7 @@
 #load {
     text-align: center;
 }
+
+#loader {
+    width: 50px;
+}

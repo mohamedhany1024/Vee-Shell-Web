@@ -1,6 +1,12 @@
 let promptSound = new Audio("/static/sounds/prompt.wav");
 document.getElementById("screenRes").innerHTML = ("Screen Resolution: " + screen.width + "X" + screen.height);
-
+let seperators = document.getElementsByClassName("infoSeperator");
+let color = parent.getAccentColor();
+let crf = 6/3;
+for(i=0; i<seperators.length; i++) {
+    console.log(color);
+    //seperators[i].style.color = `rgb(${color[0]*crf}, ${color[1]*crf}, ${color[2]*crf})`;
+}
 
 function clearAll() {
     openDialogue("prompt");
@@ -15,6 +21,7 @@ function clearData () {
 function cancel() {
     let prompt = document.getElementById("prompt");
     prompt.style.display = ("none");
+    
 }
 
 function about() {
