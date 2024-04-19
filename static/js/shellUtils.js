@@ -63,6 +63,12 @@ function closeDialogue(dId) {
 	bg[0].style.filter = ("blur(13px)");
 }
 
+function updateProperties(propertyObjects) {
+	for(i = 0; i < propertyObjects.length; i++) {
+		document.querySelector(':root').style.setProperty(propertyObjects[i].name, propertyObjects[i].value);
+	}
+}
+
 function main() {
 	document.getElementById("main").style.display = "block";
 }

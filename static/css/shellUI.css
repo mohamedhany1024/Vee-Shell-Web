@@ -6,11 +6,13 @@
 	--slider-knob-shadow: rgb(46, 46, 46);
 	--app-bg-brightness: 80%;
 	--app-bg-blur: 13px;
+	--app-bg-color: white;
 	--font-color: rgb(255, 255, 255);
 	--main-padding: 8px;
 	--title-padding: 20px;
 	--ui-roundness: 10px;
-	--knob-roundness: 100px;
+	--slider-knob-roundness: 100px;
+	--accent-color: teal;
 }
 
 * {
@@ -40,7 +42,7 @@
 }
 
 .titleBar {
-	background-color: rgba(255, 255, 255, 0.411);
+	background-color: var(--main-bg-color);
 	font-family: sans-serif;
 	font-size: 180%;
 	border-radius: var(--ui-roundness);
@@ -53,10 +55,10 @@
 }
 
 .btn {
-	background-color: rgba(255, 255, 255, 0.411); 
+	background-color: var(--main-bg-color); 
 	border: none;
 	font-size: 4vh;
-	border-radius: 10px;
+	border-radius: var(--ui-roundness);
 	padding: 2vh;
 	transition: background-color 0.3s ease-in-out;
 	margin: 1vh;
@@ -72,7 +74,7 @@
 }
 
 .editText {
-	background-color: #c5c5c56c;
+	background-color: var(--main-bg-color);
     border-top: none;
     border-right: none;
     border-left: none;
@@ -83,20 +85,20 @@
 }
 
 .editText:hover {
-	box-shadow: 0 0 15px #aaaaaa;
+	box-shadow: 0 0 15px var(--shadow-color);
 }
 
 .textBlock {
-	background-color:  rgba(255, 255, 255, 0.411);
+	background-color:  var(--main-bg-color);
 	padding: var(--main-padding);
-	border-radius: 10px;
+	border-radius: var(--ui-roundness);
 	margin-bottom: 8px;
 }
 
 .menuOptionTop {
-	background-color: rgba(255, 255, 255, 0.411);
-	border-top-right-radius: 10px;
-	border-top-left-radius: 10px;
+	background-color: var(--main-bg-color);
+	border-top-right-radius: var(--ui-roundness);
+	border-top-left-radius: var(--ui-roundness);
 	/*justify-content: center;*/
 	align-items: center;
 	transition: background-color 0.3s ease-in-out;
@@ -105,9 +107,9 @@
 }
 
 .menuOptionBottom {
-	background-color: rgba(255, 255, 255, 0.411);
-	border-bottom-right-radius: 10px;
-	border-bottom-left-radius: 10px;
+	background-color: var(--main-bg-color);
+	border-bottom-right-radius: var(--ui-roundness);
+	border-bottom-left-radius: var(--ui-roundness);
 	/*justify-content: center;*/
 	align-items: center;
 	transition: background-color 0.3s ease-in-out;
@@ -116,8 +118,8 @@
 }
 
 .menuOption {
-	background-color: rgba(255, 255, 255, 0.411);
-	border-radius: 10px;
+	background-color: var(--main-bg-color);
+	border-radius: var(--ui-roundness);
 	/*justify-content: center;*/
 	align-items: center;
 	transition: background-color 0.3s ease-in-out;
@@ -131,7 +133,7 @@
 }
 
 .menuOptionMiddle {
-	background-color: rgba(255, 255, 255, 0.411);
+	background-color: var(--main-bg-color);
 	
 	/*justify-content: center;*/
 	align-items: center;
@@ -150,8 +152,8 @@
 }
 
 .imageBtn {
-	background-color: rgba(255, 255, 255, 0.411);
-	border-radius: 10px;
+	background-color: var(--main-bg-color);
+	border-radius: var(--ui-roundness);
 	border: none;
 	transition: background-color 0.3s ease-in-out;
 }
@@ -195,8 +197,8 @@
 .dialogueBox {
 	display: none;
 	position: fixed;
-    background-color: rgba(255, 255, 255, 0.411);
-    box-shadow: #aaaaaa 0 0 10px;
+    background-color: var(--main-bg-color);
+    box-shadow: var(--shadow-color) 0 0 10px;
 	padding: var(--main-padding);
 	width: 100%;
 	animation: 0.5s ease 0s 1 prompt;
@@ -204,7 +206,7 @@
 }
 
 .dialogueBtn {
-	background-color:  rgba(255, 255, 255, 0.411);
+	background-color:  var(--main-bg-color);
     color:black;
     font-size: 150%;
 	border: none;
@@ -217,7 +219,7 @@
 
 .background {
 	background-image: url('../wallpapers/yellowElder.jpg');
-	
+	background-color: var(--app-bg-color);
     position: fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -230,7 +232,7 @@
 	bottom: 0;
     z-index: -1;
 	transform: scale(1.2);
-    filter: blur(13px) brightness(70%);
+    filter: blur(var(--app-bg-blur)) brightness( var(--app-bg-brightness));
 	
 }
 
@@ -310,7 +312,7 @@
 }
 
 .label {
-	background-color:  rgba(255, 255, 255, 0.411);
+	background-color:  var(--main-bg-color);
 	border-radius: 5px;
 	display: table;
 	padding: var(--main-padding);
@@ -338,7 +340,7 @@
   	/* background: #04AA6D; */
   	cursor: pointer; /* Cursor on hover */
 	background-color: var(--slider-knob-color);
-	border-radius: 100px;
+	border-radius: var(--slider-knob-roundness);
 	box-shadow: 0 0 12px var(--slider-knob-shadow);
 	transition: width 0.2s ease-out;
 }
@@ -354,14 +356,14 @@
   	/* width: 25px; Set a specific slider handle width */
   	/* height: 25px; Slider handle height */
   	background-color: var(--slider-color); /* Green background */
-	border-radius: 15px;
+	border-radius: var(--slider-knob-roundness);
   	cursor: pointer; /* Cursor on hover */
 }
 
 .seek::-moz-range-thumb {
 	border: none;
 	background-color: var(--slider-knob-color);
-	border-radius: 100px;
+	border-radius: var(--slider-knob-roundness);
 	box-shadow: 0 0 12px var(--slider-knob-shadow);
 	transition: width 0.2s ease-out;
 }
