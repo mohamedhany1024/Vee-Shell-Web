@@ -77,6 +77,25 @@
                 <p>Total Storage Space: {{stGig}}GB</p>
             </div>
         </div>
+
+        <div class="screen" id="style">
+            <div class="titleBar">
+                <img src="{{ url_for('static', filename='images/back_ico.png') }}" width="40" id="btn" onclick="openScreen('main')" class="btn">
+                <p>Style</p>
+            </div>
+            <p class="label">Apps</p>
+            <div class="textBlock">
+
+                <p>App Background Type</p>
+                <select class="select" name="" id="appBgType">
+                    <option class="option" value="wallpaperBlurred">Wallpaper Blurred</option>
+                    <option class="option" value="accentGradient">Accent Gradient</option>
+                </select>
+
+                
+            </div>
+            <button class="btn" onclick="applyStyle()">Apply</button>
+        </div>
         <div class="screen" id="main">
             <div class="titleBar">
                 <p>Settings</p>
@@ -93,7 +112,7 @@
                 <p class="menuLabel">Fonts</p>
             </div>
 
-            <div class="menuOptionMiddle">
+            <div class="menuOptionMiddle" onclick="openScreen('style')">
                 <img src="{{ url_for('static', filename='images/theme_ico_2.png') }}" width="30" class="menuImage">
                 <p class="menuLabel">Style</p>
             </div>

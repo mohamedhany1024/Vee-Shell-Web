@@ -19,6 +19,9 @@ function checkAppLoad() {
 		splashColor[1]*=(17/20);
 		splashColor[2]*=(17/20);
 		document.getElementById("splashScreen").style.backgroundColor = "rgb("+splashColor[0]+", "+splashColor[1]+", "+splashColor[2]+")";
+		if (localStorage.getItem("appBgType") == "accentGradient") {
+			document.querySelector(".background").style.backgroundImage = `radial-gradient(circle at 10px 10px ,  rgb(${splashColor[0]*(4/2)}, ${splashColor[1]*(4/2)}, ${splashColor[2]*(4/2)}), rgb(${splashColor[0]*(4/10)}, ${splashColor[1]*(4/10)}, ${splashColor[2]*(4/10)}))`;
+		}
 		setTimeout(()=> {
 			
 			document.getElementById("splashScreen").classList.toggle("splashScreen--hide");

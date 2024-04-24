@@ -64,3 +64,11 @@ function wallpaper() {
     wallpaper.style.display = ("block");
     
 }
+
+function applyStyle() {
+    let appBgTypeSelect = document.querySelector("#appBgType");
+    localStorage.setItem("appBgType", appBgTypeSelect.options[appBgTypeSelect.selectedIndex].value);
+
+}
+
+

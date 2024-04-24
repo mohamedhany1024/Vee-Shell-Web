@@ -151,6 +151,18 @@
 	/*display: inline-flex;*/
 }
 
+.select {
+	background-color: var(--main-bg-color);
+	border-radius: var(--ui-roundness);
+	padding: var(--main-padding);
+}
+
+.option {
+	background-color: var(--main-bg-color);
+	border-radius: var(--ui-roundness);
+	padding: var(--main-padding);
+}
+
 .imageBtn {
 	background-color: var(--main-bg-color);
 	border-radius: var(--ui-roundness);
