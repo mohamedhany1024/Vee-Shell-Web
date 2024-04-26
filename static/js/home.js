@@ -80,7 +80,7 @@ function power() {
     bg.style.filter = ("blur(13px)");
     background.style.filter = ("blur(13px)");
 
-    power.style.display = ("block");
+    power.style.display = ("flex");
     setTimeout(() => {
         power.classList.toggle("powerOptions--activated");
     }, 10);
