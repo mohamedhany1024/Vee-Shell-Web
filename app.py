@@ -90,3 +90,7 @@ def restart():
 def listMusic():
 
 	return jsonify(audio_files)
+
+
+if __name__ == "__main__":
+    app.run(debug=True, extra_files=['currentWallpaper.txt'])
