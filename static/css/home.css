@@ -137,6 +137,7 @@ iframe {
     left: 0;
     bottom: 0;
     display: none;
+    border: none;
     
     /* animation: 0.4s ease 1 normal forwards appOpen; */
     
