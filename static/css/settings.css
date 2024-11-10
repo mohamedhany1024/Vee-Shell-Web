@@ -46,7 +46,7 @@
 }
 
 .settings {
-    animation: 0.5s ease-out 0s 1 slide;
+    /* animation: 0.5s ease-out 0s 1 slide; */
     width: 100%;
     height: 100%;
 }
